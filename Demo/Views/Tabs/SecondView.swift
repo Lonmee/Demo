@@ -14,7 +14,8 @@ struct SecondView: View {
             CapsuleText(text: "Frist")
                 .onTapGesture(count: 1, perform: {
                     accountReq(name: "Lonmee") { data in
-                        print(data)
+                        let users = data as! [User]
+                        print(users[0].id)
                     }
                 })
             CapsuleText(text: "Second")
