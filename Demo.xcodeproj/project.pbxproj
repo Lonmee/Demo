@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7CFC261328A2007EB7FD /* CoreDataView.swift */; };
+		B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7D112613656B007EB7FD /* UserDetails.swift */; };
 		B0B2670E261238890058316D /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2670D261238890058316D /* DemoApp.swift */; };
 		B0B26710261238890058316D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2670F261238890058316D /* ContentView.swift */; };
 		B0B267122612388B0058316D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B267112612388B0058316D /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		B03B7CFC261328A2007EB7FD /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
+		B03B7D112613656B007EB7FD /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		B0B2670A261238890058316D /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B2670D261238890058316D /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		B0B2670F261238890058316D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B03B7D1026136550007EB7FD /* UserViews */ = {
+			isa = PBXGroup;
+			children = (
+				B03B7D112613656B007EB7FD /* UserDetails.swift */,
+			);
+			path = UserViews;
+			sourceTree = "<group>";
+		};
 		B0B26701261238890058316D = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +285,7 @@
 				B0B267672612D07F0058316D /* Large_views.swift */,
 				B03B7CFC261328A2007EB7FD /* CoreDataView.swift */,
 				B0B267642612D07F0058316D /* UserView.swift */,
+				B03B7D1026136550007EB7FD /* UserViews */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -492,6 +503,7 @@
 				B0B267882612D0E30058316D /* Data.swift in Sources */,
 				B0B267F82612E69E0058316D /* Demo.xcdatamodeld in Sources */,
 				B0B26828261304690058316D /* HTTPMethod.swift in Sources */,
+				B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */,
 				B0B2676F2612D07F0058316D /* TextFieldAndForm.swift in Sources */,
 				B0B267872612D0E30058316D /* CDUtils.swift in Sources */,
 				B0B267E22612DD3D0058316D /* Remote.swift in Sources */,

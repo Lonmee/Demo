@@ -11,65 +11,52 @@ import CoreData
 import SwiftHTTP
 
 struct UserView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    //    @FetchRequest(
-    //        sortDescriptors: [NSSortDescriptor(keyPath: \CDUser.nick, ascending: true)],
-    //        animation: .default)
-    //    private var cdUsers: FetchedResults<CDUser>
-    
-    @State
-    var users: [User] = [User]()
+    @State var users: [User] = [User]()
+    @State var creatorShown = false
     var body: some View {
         List {
-            ForEach(users, id: \.self.id.uuidString) { user in
-                HStack {
-                    Text(user.name)
-                    Text(String(user.age!))
-                    Text(user.sex! ? "Male" : "Female")
+            ForEach(users, id: \.self.id) { user in
+                NavigationLink(destination: UserDetails(user: user)) {
+                    HStack {
+                        Text(user.name)
+                        Text(String(user.age ?? 0))
+                        Text(user.sex! ? "Male" : "Female")
+                    }
                 }
             }
+            .onDelete(perform: deleteUsers)
         }
         .navigationTitle(Text("People"))
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarItems(trailing: Button(action: addUser) {
+        .navigationBarItems(trailing: Button(action: { creatorShown.toggle() }) {
             Label("Add Item", systemImage: "plus")
         })
         .onAppear {
-            print(UIDevice.current.identifierForVendor!.uuidString)
             httpGET(api: .USER, id: nil) { data in
                 users = data as! [User]
             }
         }
+        .sheet(
+            isPresented: $creatorShown,
+            onDismiss: {
+                withAnimation {
+                    httpGET(api: .USER, id: nil) { data in
+                        users = data as! [User]
+                    }
+                }
+            },
+            content: { UserCreator() })
     }
     
-    private func addUser() {
+    private func deleteUsers(offsets: IndexSet) {
         withAnimation {
-            //            let newUser = CDUser(context: viewContext)
-            //            newUser.nick = "new one"
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            //            offsets.map { cdUsers[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            offsets.map { users[$0].id }.forEach({ id in
+                httpDelete(api: .USER, id: id) {_ in
+                    httpGET(api: .USER, id: nil) { data in
+                        users = data as! [User]
+                    }
+                }
+            })
         }
     }
 }

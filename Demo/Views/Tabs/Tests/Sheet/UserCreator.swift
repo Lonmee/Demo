@@ -10,30 +10,29 @@ import SwiftUI
 import CoreData
 
 struct UserCreator: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @Environment(\.presentationMode) var mode
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
     
+    @Environment(\.presentationMode) var mode
     @State var nick: String = ""
+    @State var sex: String = "male"
+    @State var age: String = ""
     @State var email: String = ""
     @State var phone: String = ""
     @State var qq: String = ""
     @State var wechat: String = ""
     
+    let pickerList = ["male", "female"]
+    
     var body: some View {
         VStack {
             Text("Profile Creator")
                 .foregroundColor(.blue)
-                .font(.title)
+                .font(.title3)
                 .padding(.top, 20)
             Form {
                 Section (header: Text("Head Icon:")) {
                     HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 80) {
                         Image(systemName: "person.fill")
-                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         Button("Take photo", action: {
                             
                         })
@@ -41,51 +40,54 @@ struct UserCreator: View {
                         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
                     }
                 }
-                Section (header: Text("Nick:")) {
-                    TextField("Enter your nick", text: $nick)
+                Section (header: Text("Infomation:")) {
+                    TextField("Nick name", text: $nick)
+                    HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
+                        Text("Sex")
+                        Picker(selection: $sex, label: Text("Sex")) {
+                            ForEach(pickerList, id: \.self) { value in
+                                Text(String(value)).tag(value)
+                            }
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    TextField("Age", text: $age)
+                        .keyboardType(.numberPad)
                 }
                 Section (header: Text("Contack:")) {
                     TextField("Email", text: $email)
+                        .keyboardType(.emailAddress)
                     TextField("Phone", text: $phone)
+                        .keyboardType(.phonePad)
                     TextField("QQ", text: $qq)
+                        .keyboardType(.numberPad)
                     TextField("Wechat", text: $wechat)
                 }
             }
-            Button("Create", action: {
-                addItem()
-                self.mode.wrappedValue.dismiss()
+            Button(!nick.isEmpty && !age.isEmpty && !sex.isEmpty ? "Create" : "Cancel", action: {
+                if !nick.isEmpty && !age.isEmpty && !sex.isEmpty {
+                    addUser()
+                } else {
+                    self.mode.wrappedValue.dismiss()
+                }
             })
         }
     }
     
-    private func addItem() {
+    private func addUser() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            let uuid = UUID().uuidString
+            let user = User(id: uuid, name: nick, sex: sex == "male", age: Int(age), contact: [Contact(uid: uuid, phone: phone, email: email, qq: qq, wechat: wechat)])
+            httpPOST(api: .USER, param: [user]) { data in
+                print(data)
+                self.mode.wrappedValue.dismiss()
             }
         }
     }
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
             
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
         }
     }
 }
