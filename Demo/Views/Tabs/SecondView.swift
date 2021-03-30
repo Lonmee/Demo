@@ -13,7 +13,9 @@ struct SecondView: View {
         VStack(spacing: 10){
             CapsuleText(text: "Frist")
                 .onTapGesture(count: 1, perform: {
-                    accountReq(name: "Lonmee")
+                    accountReq(name: "Lonmee") { data in
+                        print(data)
+                    }
                 })
             CapsuleText(text: "Second")
             Text("Virture")
