@@ -36,6 +36,7 @@ struct ContentView: View {
             }
             .navigationBarTitle(Text(sellected))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             self.sellected = self.tabs[0]
             //cModuleTest()

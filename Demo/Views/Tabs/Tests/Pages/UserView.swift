@@ -13,10 +13,10 @@ import SwiftHTTP
 struct UserView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \CDUser.nick, ascending: true)],
-//        animation: .default)
-//    private var cdUsers: FetchedResults<CDUser>
+    //    @FetchRequest(
+    //        sortDescriptors: [NSSortDescriptor(keyPath: \CDUser.nick, ascending: true)],
+    //        animation: .default)
+    //    private var cdUsers: FetchedResults<CDUser>
     
     @State
     var users: [User] = [User]()
@@ -31,30 +31,22 @@ struct UserView: View {
             }
         }
         .navigationTitle(Text("People"))
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: Button(action: addUser) {
             Label("Add Item", systemImage: "plus")
         })
         .onAppear {
             print(UIDevice.current.identifierForVendor!.uuidString)
-            HTTP.GET("http://192.168.199.245:8181/api/v1/users") { response in
-                if let err = response.error {
-                    print("error: \(err.localizedDescription)")
-                    return //also notify app of failure as needed
-                }
-                let decoder = JSONDecoder()
-                do {
-                    users = try decoder.decode([User].self, from: response.text!.data(using: .utf8)!)
-                } catch {
-                    print(error)
-                }
+            httpGET(api: .USER, id: nil) { data in
+                users = data as! [User]
             }
         }
     }
     
     private func addUser() {
         withAnimation {
-//            let newUser = CDUser(context: viewContext)
-//            newUser.nick = "new one"
+            //            let newUser = CDUser(context: viewContext)
+            //            newUser.nick = "new one"
             do {
                 try viewContext.save()
             } catch {
@@ -68,7 +60,7 @@ struct UserView: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-//            offsets.map { cdUsers[$0] }.forEach(viewContext.delete)
+            //            offsets.map { cdUsers[$0] }.forEach(viewContext.delete)
             
             do {
                 try viewContext.save()
