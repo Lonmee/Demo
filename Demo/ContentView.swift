@@ -9,69 +9,48 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    let tabs = ["First", "Second", "Tests"]
+    @State var sellected = ""
+    
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        NavigationView {
+            TabView(selection: $sellected) {
+                FirstView()
+                    .tabItem {
+                        Image(systemName: "1.square.fill")
+                        Text(tabs[0])
+                    }
+                    .tag(tabs[0])
+                SecondView()
+                    .tabItem {
+                        Image(systemName: "2.square.fill")
+                        Text(tabs[1])
+                    }
+                    .tag(tabs[1])
+                TestsView()
+                    .tabItem {
+                        Image(systemName: "3.square.fill")
+                        Text(tabs[2])
+                    }
+                    .tag(tabs[2])
             }
-            .onDelete(perform: deleteItems)
+            .navigationBarTitle(Text(sellected))
         }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+        .onAppear {
+            self.sellected = self.tabs[0]
+            //cModuleTest()
         }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
+private func cModuleTest() {
+    printHellow()
+    print("\rrandom: \(randomInt)")
+    print("name: \(String(cString: getName(person)!))")
+    info(person)
+    destory(person)
+    runSwiftFun()
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
