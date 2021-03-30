@@ -9,16 +9,19 @@
 import SwiftUI
 
 struct TestsView: View {
+    
     private let pages: [(String, AnyView)] = [
         ("Navigations test", AnyView(Navigations())),
         ("TextFieldAndForm test", AnyView(TextFieldAndForm())),
         ("ValuePicker test", AnyView(ValuePicker())),
         ("List & Item test", AnyView(List_Item())),
         ("Large views test", AnyView(Large_views())),
+        ("CoreData", AnyView(CoreDataView())),
         ("User", AnyView(UserView())),
     ]
-    @State var userTools: UserTools? = nil
-    @State var show: Bool = false
+    
+    @State var creatorShown = false
+    @State var listShown = false
     
     var body: some View {
         VStack{
@@ -31,20 +34,18 @@ struct TestsView: View {
             }
             HStack (alignment: .center, spacing: 40){
                 Button("user creator", action: {
-                    self.userTools = UserTools(view: AnyView(UserCreator()))
+                    creatorShown.toggle()
                 })
                 .frame(width: 120, height: 40, alignment: .center)
+                .sheet(isPresented: $creatorShown, content: {UserCreator()})
                 Button("user list", action: {
-                    self.userTools = UserTools(view: AnyView(UserList()))
-                    self.show.toggle()
+                    listShown.toggle()
                 })
                 .frame(width: 120, height: 40, alignment: .center)
+                .sheet(isPresented: $listShown, content: {UserList()})
             }
             Spacer()
         }
-        .sheet(item: $userTools, content: {tool -> AnyView in
-            AnyView(tool.view)
-        })
     }
 }
 
