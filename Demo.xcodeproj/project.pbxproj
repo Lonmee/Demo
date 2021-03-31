@@ -179,10 +179,10 @@
 		B0B2670C261238890058316D /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				B0B267E02612DD3D0058316D /* Remote */,
 				B0B2677D2612D0E30058316D /* Modules */,
-				B0B26741261239010058316D /* Model */,
 				B0B26740261238E00058316D /* Views */,
+				B0B26741261239010058316D /* Model */,
+				B0D4E84826145144009D2375 /* Resources */,
 				B0B2670D261238890058316D /* DemoApp.swift */,
 				B0B2670F261238890058316D /* ContentView.swift */,
 				B0B267112612388B0058316D /* Assets.xcassets */,
@@ -234,8 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				B0B267942612D1140058316D /* User.swift */,
-				B0B2678E2612D0FE0058316D /* Data */,
 				B0D4E84126141EEC009D2375 /* PHViewController.swift */,
+				B0B267E02612DD3D0058316D /* Remote */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,14 +331,6 @@
 			path = C;
 			sourceTree = "<group>";
 		};
-		B0B2678E2612D0FE0058316D /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				B0B2678F2612D0FE0058316D /* AppConstant.plist */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		B0B267CF2612DB370058316D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +354,14 @@
 				B0B267E82612DF050058316D /* Modifiers.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		B0D4E84826145144009D2375 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0B2678F2612D0FE0058316D /* AppConstant.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
