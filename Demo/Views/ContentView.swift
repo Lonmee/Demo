@@ -9,32 +9,33 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    let tabs = ["First", "Second", "Tests"]
-    @State var sellected = ""
+    @State private var selection: Tab = .first
+    
+    enum Tab {
+        case first
+        case second
+        case tests
+    }
     
     var body: some View {
-        TabView(selection: $sellected) {
+        TabView(selection: $selection) {
             FirstView()
                 .tabItem {
-                    Image(systemName: "1.square.fill")
-                    Text(tabs[0])
+                    Label("First", systemImage: "1.square.fill")
                 }
-                .tag(tabs[0])
+                .tag(Tab.first)
             SecondView()
                 .tabItem {
-                    Image(systemName: "2.square.fill")
-                    Text(tabs[1])
+                    Label("Second", systemImage: "2.square.fill")
                 }
-                .tag(tabs[1])
+                .tag(Tab.second)
             TestsView()
                 .tabItem {
-                    Image(systemName: "3.square.fill")
-                    Text(tabs[2])
+                    Label("Tests", systemImage: "3.square.fill")
                 }
-                .tag(tabs[2])
+                .tag(Tab.tests)
         }
         .onAppear {
-            self.sellected = self.tabs[0]
             //cModuleTest()
         }
         .navigationViewStyle(StackNavigationViewStyle())
