@@ -254,9 +254,8 @@
 		B0B267582612D07F0058316D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B0B2675A2612D07F0058316D /* Navigations */,
-				B0B2675E2612D07F0058316D /* Sheet */,
 				B0B267622612D07F0058316D /* Pages */,
+				B0B2675E2612D07F0058316D /* Sheet */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -282,6 +281,7 @@
 		B0B267622612D07F0058316D /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				B0B2675A2612D07F0058316D /* Navigations */,
 				B0B267632612D07F0058316D /* TextFieldAndForm.swift */,
 				B0B267652612D07F0058316D /* List&Item.swift */,
 				B0B267662612D07F0058316D /* ValuePicker.swift */,
