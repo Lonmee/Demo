@@ -10,13 +10,16 @@ import SwiftUI
 
 struct FirstView: View {
     var body: some View {
-        VStack {
-            Image("ao3jn7")
-                .resizable()
-                .scaledToFill()
-                .frame(height: 200)
-                .clipped()
-            Spacer()
+        NavigationView {
+            VStack {
+                Image("ao3jn7")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+                Spacer()
+            }
+            .navigationTitle("First")
         }
     }
 }

@@ -13,34 +13,31 @@ struct ContentView: View {
     @State var sellected = ""
     
     var body: some View {
-        NavigationView {
-            TabView(selection: $sellected) {
-                FirstView()
-                    .tabItem {
-                        Image(systemName: "1.square.fill")
-                        Text(tabs[0])
-                    }
-                    .tag(tabs[0])
-                SecondView()
-                    .tabItem {
-                        Image(systemName: "2.square.fill")
-                        Text(tabs[1])
-                    }
-                    .tag(tabs[1])
-                TestsView()
-                    .tabItem {
-                        Image(systemName: "3.square.fill")
-                        Text(tabs[2])
-                    }
-                    .tag(tabs[2])
-            }
-            .navigationBarTitle(Text(sellected))
+        TabView(selection: $sellected) {
+            FirstView()
+                .tabItem {
+                    Image(systemName: "1.square.fill")
+                    Text(tabs[0])
+                }
+                .tag(tabs[0])
+            SecondView()
+                .tabItem {
+                    Image(systemName: "2.square.fill")
+                    Text(tabs[1])
+                }
+                .tag(tabs[1])
+            TestsView()
+                .tabItem {
+                    Image(systemName: "3.square.fill")
+                    Text(tabs[2])
+                }
+                .tag(tabs[2])
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             self.sellected = self.tabs[0]
             //cModuleTest()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

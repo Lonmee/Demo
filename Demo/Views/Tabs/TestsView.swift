@@ -24,27 +24,30 @@ struct TestsView: View {
     @State var listShown = false
     
     var body: some View {
-        VStack{
-            Form {
-                ForEach(pages, id: \.self.0) { (name, instance) in
-                    NavigationLink(destination: AnyView(instance)) {
-                        Text(name)
+        NavigationView {
+            VStack{
+                Form {
+                    ForEach(pages, id: \.self.0) { (name, instance) in
+                        NavigationLink(destination: AnyView(instance)) {
+                            Text(name)
+                        }
                     }
                 }
+                HStack (alignment: .center, spacing: 40){
+                    Button("user creator", action: {
+                        creatorShown.toggle()
+                    })
+                    .frame(width: 120, height: 40, alignment: .center)
+                    .sheet(isPresented: $creatorShown, content: {UserCreator()})
+                    Button("user list", action: {
+                        listShown.toggle()
+                    })
+                    .frame(width: 120, height: 40, alignment: .center)
+                    .sheet(isPresented: $listShown, content: {UserList()})
+                }
+                Spacer()
             }
-            HStack (alignment: .center, spacing: 40){
-                Button("user creator", action: {
-                    creatorShown.toggle()
-                })
-                .frame(width: 120, height: 40, alignment: .center)
-                .sheet(isPresented: $creatorShown, content: {UserCreator()})
-                Button("user list", action: {
-                    listShown.toggle()
-                })
-                .frame(width: 120, height: 40, alignment: .center)
-                .sheet(isPresented: $listShown, content: {UserList()})
-            }
-            Spacer()
+            .navigationTitle("Tests")
         }
     }
 }

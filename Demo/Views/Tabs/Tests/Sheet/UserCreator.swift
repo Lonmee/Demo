@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreData
+import PhotosUI
 
 struct UserCreator: View {
     
@@ -34,7 +35,12 @@ struct UserCreator: View {
                         Image(systemName: "person.fill")
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         Button("Take photo", action: {
+                            var configuration = PHPickerConfiguration()
+                            configuration.filter = PHPickerFilter.livePhotos
+                            configuration.selectionLimit = 0
                             
+                            let picker = PHPickerViewController(configuration: configuration)
+                            picker.present(PHViewController(), animated: true, completion: { print("photo sellected") })
                         })
                         .background(Color.gray)
                         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)

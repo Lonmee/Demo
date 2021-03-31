@@ -41,6 +41,7 @@
 		B0B267F02612E19D0058316D /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0B267D02612DB370058316D /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0B267F82612E69E0058316D /* Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0B267F62612E69E0058316D /* Demo.xcdatamodeld */; };
 		B0B26828261304690058316D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B26827261304690058316D /* HTTPMethod.swift */; };
+		B0D4E84226141EEC009D2375 /* PHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D4E84126141EEC009D2375 /* PHViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		B0B267E82612DF050058316D /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		B0B267F72612E69E0058316D /* Demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Demo.xcdatamodel; sourceTree = "<group>"; };
 		B0B26827261304690058316D /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		B0D4E84126141EEC009D2375 /* PHViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			children = (
 				B0B267942612D1140058316D /* User.swift */,
 				B0B2678E2612D0FE0058316D /* Data */,
+				B0D4E84126141EEC009D2375 /* PHViewController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				B0B267172612388B0058316D /* Persistence.swift in Sources */,
 				B0B267472612D02B0058316D /* FirstView.swift in Sources */,
 				B0B267882612D0E30058316D /* Data.swift in Sources */,
+				B0D4E84226141EEC009D2375 /* PHViewController.swift in Sources */,
 				B0B267F82612E69E0058316D /* Demo.xcdatamodeld in Sources */,
 				B0B26828261304690058316D /* HTTPMethod.swift in Sources */,
 				B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */,
