@@ -28,9 +28,18 @@ struct UserView: View {
         }
         .navigationTitle(Text("People"))
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarItems(trailing: Button(action: { creatorShown.toggle() }) {
-            Label("Add Item", systemImage: "plus")
-        })
+        //.navigationBarItems(trailing: Button(action: { creatorShown.toggle() }) {
+        //    Label("Add Item", systemImage: "person.crop.circle.badge.plus")
+        //        .labelStyle(IconOnlyLabelStyle())
+        //    Image(systemName: "person.crop.circle")
+        //})
+        .toolbar {
+            Button(action: { creatorShown.toggle() }) {
+                Label("Add Item", systemImage: "person.crop.circle.badge.plus")
+                    .labelStyle(IconOnlyLabelStyle())
+                Image(systemName: "person.crop.circle")
+            }
+        }
         .onAppear {
             httpGET(api: .USER, id: nil) { data in
                 users = data as! [User]

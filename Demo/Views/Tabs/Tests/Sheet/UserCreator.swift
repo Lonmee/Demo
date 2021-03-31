@@ -14,36 +14,39 @@ struct UserCreator: View {
     
     @Environment(\.presentationMode) var mode
     @State var nick: String = ""
+    @State var icon: Image = Image(systemName: "person.fill")
     @State var sex: String = "male"
     @State var age: String = ""
     @State var email: String = ""
     @State var phone: String = ""
     @State var qq: String = ""
     @State var wechat: String = ""
-    
+    @State var pickerResults: [PHPickerResult] = []
+    @State var pickerShown = false
     let pickerList = ["male", "female"]
     
     var body: some View {
-        VStack {
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
             Text("Profile Creator")
                 .foregroundColor(.blue)
                 .font(.title3)
-                .padding(.top, 20)
+                .padding(.all, 20)
             Form {
                 Section (header: Text("Head Icon:")) {
-                    HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 80) {
-                        Image(systemName: "person.fill")
-                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        Button("Take photo", action: {
-                            var configuration = PHPickerConfiguration()
-                            configuration.filter = PHPickerFilter.livePhotos
-                            configuration.selectionLimit = 0
-                            
-                            let picker = PHPickerViewController(configuration: configuration)
-                            picker.present(PHViewController(), animated: true, completion: { print("photo sellected") })
+                    HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 120) {
+                        icon
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fill)
+                            .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 20)
+                        Button("Change", action: {
+                            pickerShown.toggle()
                         })
-                        .background(Color.gray)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                        .padding(.all, 12)
+                        .background(Color(UIColor(red: 0.84, green: 0.85, blue: 0.87, alpha: 0.6)))
+                        .sheet(isPresented: $pickerShown, onDismiss: headIcon, content: {
+                            SPHPickerViewController(results: $pickerResults, configuration: pHPickerConfiguration())
+                        })
                     }
                 }
                 Section (header: Text("Infomation:")) {
@@ -70,13 +73,25 @@ struct UserCreator: View {
                     TextField("Wechat", text: $wechat)
                 }
             }
-            Button(!nick.isEmpty && !age.isEmpty && !sex.isEmpty ? "Create" : "Cancel", action: {
-                if !nick.isEmpty && !age.isEmpty && !sex.isEmpty {
-                    addUser()
-                } else {
-                    self.mode.wrappedValue.dismiss()
+            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
+                Button(action: {
+                    if !nick.isEmpty && !age.isEmpty && !sex.isEmpty {
+                        addUser()
+                    } else {
+                        self.mode.wrappedValue.dismiss()
+                    }
+                }) {
+                    //!nick.isEmpty && !age.isEmpty && !sex.isEmpty ? Label("⭕️", systemImage: "hand.thumbsup") : Label("❌", systemImage: "hand.thumbsup.fill")
+                    !email.isEmpty && !phone.isEmpty && !qq.isEmpty && !wechat.isEmpty &&
+                        !nick.isEmpty && !age.isEmpty && !sex.isEmpty ?
+                        Text("💯💯💯💯💯💯💯💯💯💯💯") :
+                        !nick.isEmpty && !age.isEmpty && !sex.isEmpty ?
+                        Text("⭕️⭕️⭕️⭕️⭕️") :
+                        Text("🚫🚫🚫")
                 }
-            })
+                .frame(minWidth: UIScreen.main.bounds.width, minHeight: 48)
+            }
+            .background(Color(UIColor(red: 0.84, green: 0.85, blue: 0.87, alpha: 0.6)))
         }
     }
     
@@ -91,9 +106,26 @@ struct UserCreator: View {
         }
     }
     
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            
+    private func pHPickerConfiguration() -> PHPickerConfiguration {
+        var configuration = PHPickerConfiguration(photoLibrary: .shared())
+        configuration.filter = PHPickerFilter.images
+        configuration.selectionLimit = 1
+        return configuration
+    }
+    
+    private func headIcon() -> Void {
+        if pickerResults.count > 0 {
+            if pickerResults[0].itemProvider.canLoadObject(ofClass: UIImage.self) {
+                pickerResults[0].itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                    if let err = error {
+                        print("Couldn't load image with error: \(err.localizedDescription )")
+                    } else {
+                        DispatchQueue.main.async {
+                            icon = Image(uiImage: image as! UIImage)
+                        }
+                    }
+                }
+            }
         }
     }
 }
