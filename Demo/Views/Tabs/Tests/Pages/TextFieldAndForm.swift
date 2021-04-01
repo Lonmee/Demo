@@ -15,6 +15,7 @@ struct TextFieldAndForm: View {
     
     var body: some View {
         VStack {
+            
             TextField("title", text: Binding<String>(
                 get: { self.str },
                 set: {
@@ -47,7 +48,7 @@ struct TextFieldAndForm: View {
                 }
             }
             .padding(EdgeInsets())
-            .navigationBarTitle(Text("TextFieldAndForm test"))
+            .navigationBarTitle(Text("TextFieldAndForm"))
         }
     }
 }

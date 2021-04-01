@@ -235,7 +235,6 @@
 			children = (
 				B0B267162612388B0058316D /* Persistence.swift */,
 				B0B267942612D1140058316D /* User.swift */,
-				B0D4E84126141EEC009D2375 /* PHViewController.swift */,
 				B0B267E02612DD3D0058316D /* Remote */,
 			);
 			path = Model;
@@ -298,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				B0B267782612D09B0058316D /* CapsuleText.swift */,
+				B0D4E84126141EEC009D2375 /* PHViewController.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
