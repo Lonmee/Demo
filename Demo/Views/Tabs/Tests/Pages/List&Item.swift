@@ -11,6 +11,7 @@ import CoreData
 
 struct List_Item: View {
     let imageNames = ["10dwio4", "10dzrq9", "10eiy63"]
+    @State var xxx: String = ""
     var body: some View {
         VStack{
             List(imageNames, id: \.self) { image in

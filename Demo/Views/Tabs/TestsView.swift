@@ -18,6 +18,8 @@ struct TestsView: View {
         ("Large views test", AnyView(Large_views())),
         ("CoreData", AnyView(CoreDataView())),
         ("User", AnyView(UserView())),
+        ("Search", AnyView(SearchPageViewController())),
+        ("Search2", AnyView(SearchPage2())),
     ]
     
     @State var creatorShown = false
