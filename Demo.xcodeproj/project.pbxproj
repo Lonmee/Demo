@@ -290,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				B0B2675B2612D07F0058316D /* SubNavigation.swift */,
-				B0B2675C2612D07F0058316D /* Navigations.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -307,18 +306,19 @@
 		B0B267622612D07F0058316D /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				B066BE45261AD6E600EB68D1 /* SearchBar */,
 				B0B2675A2612D07F0058316D /* Navigations */,
+				B0B2675C2612D07F0058316D /* Navigations.swift */,
 				B0B267632612D07F0058316D /* TextFieldAndForm.swift */,
 				B0B267652612D07F0058316D /* List&Item.swift */,
 				B023A77126170EF600E42753 /* SearchPage.swift */,
 				B066BE41261AD5A500EB68D1 /* SearchViewControlloer.swift */,
+				B066BE45261AD6E600EB68D1 /* SearchBar */,
 				B023A77526171B8800E42753 /* SearchPage2.swift */,
 				B0B267662612D07F0058316D /* ValuePicker.swift */,
 				B0B267672612D07F0058316D /* Large_views.swift */,
 				B03B7CFC261328A2007EB7FD /* CoreDataView.swift */,
-				B0B267642612D07F0058316D /* UserView.swift */,
 				B03B7D1026136550007EB7FD /* UserViews */,
+				B0B267642612D07F0058316D /* UserView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
