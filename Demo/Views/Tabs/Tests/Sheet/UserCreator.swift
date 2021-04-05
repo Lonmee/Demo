@@ -81,13 +81,12 @@ struct UserCreator: View {
                         self.mode.wrappedValue.dismiss()
                     }
                 }) {
-                    //!nick.isEmpty && !age.isEmpty && !sex.isEmpty ? Label("⭕️", systemImage: "hand.thumbsup") : Label("❌", systemImage: "hand.thumbsup.fill")
                     !email.isEmpty && !phone.isEmpty && !qq.isEmpty && !wechat.isEmpty &&
                         !nick.isEmpty && !age.isEmpty && !sex.isEmpty ?
-                        Text("💯💯💯💯💯💯💯💯💯💯💯") :
+                        Text("Perfect & Create") :
                         !nick.isEmpty && !age.isEmpty && !sex.isEmpty ?
-                        Text("⭕️⭕️⭕️⭕️⭕️") :
-                        Text("🚫🚫🚫")
+                        Text("Create") :
+                        Text("Canel")
                 }
                 .frame(minWidth: UIScreen.main.bounds.width, minHeight: 48)
             }

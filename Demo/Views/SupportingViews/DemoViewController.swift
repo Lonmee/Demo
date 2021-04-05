@@ -1,20 +1,13 @@
 import UIKit
  
 class ViewController: UIViewController {
-     
-    // 搜索控制器
     var searchController: UISearchController!
-     
-    //展示列表
     var tableView: UITableView!
-     
-    //原始数据集
     let schoolArray = ["清华大学","北京大学","中国人民大学","北京交通大学","北京工业大学",
                        "北京航空航天大学","北京理工大学","北京科技大学","中国政法大学",
                        "中央财经大学","华北电力大学","北京体育大学","上海外国语大学","复旦大学",
                        "华东师范大学","上海大学","河北工业大学"]
      
-    //搜索过滤后的结果集
     var searchArray:[String] = [String](){
         didSet  {self.tableView.reloadData()}
     }
@@ -30,8 +23,8 @@ class ViewController: UIViewController {
         navigationItem.searchController = self.searchController
          
         //创建表视图
-        let tableViewFrame = CGRect(x: 0, y: 20, width: self.view.frame.width,
-                                    height: self.view.frame.height-20)
+        let tableViewFrame = CGRect(x: 0, y: 0, width: self.view.frame.width,
+                                    height: self.view.frame.height)
         self.tableView = UITableView(frame: tableViewFrame, style:.plain)
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
@@ -43,7 +36,6 @@ class ViewController: UIViewController {
 }
  
 extension ViewController: UISearchResultsUpdating {
-    //实时进行搜索
     func updateSearchResults(for searchController: UISearchController) {
         self.searchArray = self.schoolArray.filter { (school) -> Bool in
             return school.contains(searchController.searchBar.text!)

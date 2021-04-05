@@ -13,6 +13,9 @@
 		B038ED7E2614D2B5009148C2 /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0B267D02612DB370058316D /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7CFC261328A2007EB7FD /* CoreDataView.swift */; };
 		B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7D112613656B007EB7FD /* UserDetails.swift */; };
+		B066BE33261ACBCB00EB68D1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE32261ACBCB00EB68D1 /* ModelData.swift */; };
+		B066BE3A261ACDF500EB68D1 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = B066BE39261ACDF500EB68D1 /* landmarkData.json */; };
+		B066BE3E261ACE2700EB68D1 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE3D261ACE2700EB68D1 /* Landmark.swift */; };
 		B0792A332615657000748544 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0792A322615657000748544 /* DemoViewController.swift */; };
 		B0B2670E261238890058316D /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2670D261238890058316D /* DemoApp.swift */; };
 		B0B26710261238890058316D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2670F261238890058316D /* ContentView.swift */; };
@@ -84,6 +87,9 @@
 		B038ED6E2614D0B6009148C2 /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "../Frameworks/SwiftHTTP/Debug-iphoneos/SwiftHTTP.framework"; sourceTree = "<group>"; };
 		B03B7CFC261328A2007EB7FD /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		B03B7D112613656B007EB7FD /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		B066BE32261ACBCB00EB68D1 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		B066BE39261ACDF500EB68D1 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
+		B066BE3D261ACE2700EB68D1 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		B0792A322615657000748544 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		B0B2670A261238890058316D /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B2670D261238890058316D /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
@@ -239,6 +245,8 @@
 		B0B26741261239010058316D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B066BE3D261ACE2700EB68D1 /* Landmark.swift */,
+				B066BE32261ACBCB00EB68D1 /* ModelData.swift */,
 				B0B267162612388B0058316D /* Persistence.swift */,
 				B0B267942612D1140058316D /* User.swift */,
 				B0B267E02612DD3D0058316D /* Remote */,
@@ -370,6 +378,7 @@
 		B0D4E84826145144009D2375 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B066BE39261ACDF500EB68D1 /* landmarkData.json */,
 				B0B2678F2612D0FE0058316D /* AppConstant.plist */,
 			);
 			path = Resources;
@@ -480,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B267902612D0FE0058316D /* AppConstant.plist in Resources */,
+				B066BE3A261ACDF500EB68D1 /* landmarkData.json in Resources */,
 				B0B267152612388B0058316D /* Preview Assets.xcassets in Resources */,
 				B0B267122612388B0058316D /* Assets.xcassets in Resources */,
 			);
@@ -527,7 +537,9 @@
 				B0B2676B2612D07F0058316D /* TestsView.swift in Sources */,
 				B023A77626171B8800E42753 /* SearchPage2.swift in Sources */,
 				B0B267702612D07F0058316D /* UserView.swift in Sources */,
+				B066BE33261ACBCB00EB68D1 /* ModelData.swift in Sources */,
 				B0B2676A2612D07F0058316D /* Navigations.swift in Sources */,
+				B066BE3E261ACE2700EB68D1 /* Landmark.swift in Sources */,
 				B0B26710261238890058316D /* ContentView.swift in Sources */,
 				B0B267712612D07F0058316D /* List&Item.swift in Sources */,
 				B0B267722612D07F0058316D /* ValuePicker.swift in Sources */,
