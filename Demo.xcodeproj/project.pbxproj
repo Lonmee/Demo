@@ -16,6 +16,8 @@
 		B066BE33261ACBCB00EB68D1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE32261ACBCB00EB68D1 /* ModelData.swift */; };
 		B066BE3A261ACDF500EB68D1 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = B066BE39261ACDF500EB68D1 /* landmarkData.json */; };
 		B066BE3E261ACE2700EB68D1 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE3D261ACE2700EB68D1 /* Landmark.swift */; };
+		B066BE42261AD5A500EB68D1 /* SearchViewControlloer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE41261AD5A500EB68D1 /* SearchViewControlloer.swift */; };
+		B066BE47261AD6FC00EB68D1 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE46261AD6FC00EB68D1 /* SearchBar.swift */; };
 		B0792A332615657000748544 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0792A322615657000748544 /* DemoViewController.swift */; };
 		B0B2670E261238890058316D /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2670D261238890058316D /* DemoApp.swift */; };
 		B0B26710261238890058316D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2670F261238890058316D /* ContentView.swift */; };
@@ -90,6 +92,8 @@
 		B066BE32261ACBCB00EB68D1 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		B066BE39261ACDF500EB68D1 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		B066BE3D261ACE2700EB68D1 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		B066BE41261AD5A500EB68D1 /* SearchViewControlloer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControlloer.swift; sourceTree = "<group>"; };
+		B066BE46261AD6FC00EB68D1 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B0792A322615657000748544 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		B0B2670A261238890058316D /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B2670D261238890058316D /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
@@ -166,6 +170,14 @@
 				B03B7D112613656B007EB7FD /* UserDetails.swift */,
 			);
 			path = UserViews;
+			sourceTree = "<group>";
+		};
+		B066BE45261AD6E600EB68D1 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				B066BE46261AD6FC00EB68D1 /* SearchBar.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		B0B26701261238890058316D = {
@@ -295,10 +307,12 @@
 		B0B267622612D07F0058316D /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				B066BE45261AD6E600EB68D1 /* SearchBar */,
 				B0B2675A2612D07F0058316D /* Navigations */,
 				B0B267632612D07F0058316D /* TextFieldAndForm.swift */,
 				B0B267652612D07F0058316D /* List&Item.swift */,
 				B023A77126170EF600E42753 /* SearchPage.swift */,
+				B066BE41261AD5A500EB68D1 /* SearchViewControlloer.swift */,
 				B023A77526171B8800E42753 /* SearchPage2.swift */,
 				B0B267662612D07F0058316D /* ValuePicker.swift */,
 				B0B267672612D07F0058316D /* Large_views.swift */,
@@ -523,6 +537,7 @@
 				B0B267892612D0E30058316D /* CPPPerson.cpp in Sources */,
 				B0B2674C2612D0310058316D /* SecondView.swift in Sources */,
 				B0B267172612388B0058316D /* Persistence.swift in Sources */,
+				B066BE47261AD6FC00EB68D1 /* SearchBar.swift in Sources */,
 				B0B267472612D02B0058316D /* FirstView.swift in Sources */,
 				B0792A332615657000748544 /* DemoViewController.swift in Sources */,
 				B0B267882612D0E30058316D /* Data.swift in Sources */,
@@ -540,6 +555,7 @@
 				B066BE33261ACBCB00EB68D1 /* ModelData.swift in Sources */,
 				B0B2676A2612D07F0058316D /* Navigations.swift in Sources */,
 				B066BE3E261ACE2700EB68D1 /* Landmark.swift in Sources */,
+				B066BE42261AD5A500EB68D1 /* SearchViewControlloer.swift in Sources */,
 				B0B26710261238890058316D /* ContentView.swift in Sources */,
 				B0B267712612D07F0058316D /* List&Item.swift in Sources */,
 				B0B267722612D07F0058316D /* ValuePicker.swift in Sources */,

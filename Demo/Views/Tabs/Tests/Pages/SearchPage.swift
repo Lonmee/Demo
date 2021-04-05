@@ -4,23 +4,18 @@
 //
 //  Created by Lonmee on 4/2/21.
 //
-
 import SwiftUI
 
-struct SearchPageViewController: UIViewControllerRepresentable {
-    
-    func makeUIViewController(context: Context) -> ViewController {
-        return ViewController()
+struct SearchPage: View {
+    @State var text = ""
+    var body: some View {
+        SearchViewController()
+            .navigationBarItems(leading: SearchBar(text: $text))
     }
-    
-    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
-        print("update SearchPageViewController")
-    }
-    
 }
 
-struct SearchPage_Previews: PreviewProvider {
+struct SearchViewControlloer_Previews: PreviewProvider {
     static var previews: some View {
-        SearchPageViewController()
+        SearchPage()
     }
 }

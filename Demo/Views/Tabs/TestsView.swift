@@ -18,7 +18,7 @@ struct TestsView: View {
         ("Large views test", AnyView(Large_views())),
         ("CoreData", AnyView(CoreDataView())),
         ("User", AnyView(UserView())),
-        ("Search", AnyView(SearchPageViewController())),
+        ("Search", AnyView(SearchPage())),
         ("Search2", AnyView(SearchPage2())),
     ]
     
