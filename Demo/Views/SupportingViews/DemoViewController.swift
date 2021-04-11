@@ -8,7 +8,7 @@ class ViewController: UIViewController {
                        "中央财经大学","华北电力大学","北京体育大学","上海外国语大学","复旦大学",
                        "华东师范大学","上海大学","河北工业大学"]
      
-    var searchArray:[String] = [String](){
+    var searchArray:[String] = [String]() {
         didSet  {self.tableView.reloadData()}
     }
  
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 //        self.searchController.dimsBackgroundDuringPresentation = false
         // 将搜索控制器集成到导航栏上
         navigationItem.searchController = self.searchController
-         
+        navigationItem.hidesSearchBarWhenScrolling = true
         //创建表视图
         let tableViewFrame = CGRect(x: 0, y: 0, width: self.view.frame.width,
                                     height: self.view.frame.height)
