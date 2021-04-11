@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		B023A77226170EF600E42753 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023A77126170EF600E42753 /* SearchPage.swift */; };
 		B023A77626171B8800E42753 /* SearchPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023A77526171B8800E42753 /* SearchPage2.swift */; };
-		B038ED7D2614D2B5009148C2 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B267D02612DB370058316D /* SwiftHTTP.framework */; };
-		B038ED7E2614D2B5009148C2 /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0B267D02612DB370058316D /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7CFC261328A2007EB7FD /* CoreDataView.swift */; };
 		B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7D112613656B007EB7FD /* UserDetails.swift */; };
 		B066BE33261ACBCB00EB68D1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE32261ACBCB00EB68D1 /* ModelData.swift */; };
@@ -49,6 +47,8 @@
 		B0B267E92612DF050058316D /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B267E82612DF050058316D /* Modifiers.swift */; };
 		B0B267F82612E69E0058316D /* Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0B267F62612E69E0058316D /* Demo.xcdatamodeld */; };
 		B0B26828261304690058316D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B26827261304690058316D /* HTTPMethod.swift */; };
+		B0BA7F09262329F900A57CAD /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BA7EFB2623298200A57CAD /* SwiftHTTP.framework */; };
+		B0BA7F0A262329F900A57CAD /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0BA7EFB2623298200A57CAD /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0D4E84226141EEC009D2375 /* SPHPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D4E84126141EEC009D2375 /* SPHPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,16 +67,30 @@
 			remoteGlobalIDString = B0B26709261238890058316D;
 			remoteInfo = Demo;
 		};
+		B0BA7EFA2623298200A57CAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0BA7EF52623298200A57CAD /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
+			remoteInfo = SwiftHTTP;
+		};
+		B0BA7EFC2623298200A57CAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0BA7EF52623298200A57CAD /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
+			remoteInfo = SwiftHTTPTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B038ED7F2614D2B5009148C2 /* Embed Frameworks */ = {
+		B0BA7F0B262329F900A57CAD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B038ED7E2614D2B5009148C2 /* SwiftHTTP.framework in Embed Frameworks */,
+				B0BA7F0A262329F900A57CAD /* SwiftHTTP.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +100,6 @@
 /* Begin PBXFileReference section */
 		B023A77126170EF600E42753 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 		B023A77526171B8800E42753 /* SearchPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage2.swift; sourceTree = "<group>"; };
-		B038ED6E2614D0B6009148C2 /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "../Frameworks/SwiftHTTP/Debug-iphoneos/SwiftHTTP.framework"; sourceTree = "<group>"; };
 		B03B7CFC261328A2007EB7FD /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		B03B7D112613656B007EB7FD /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		B066BE32261ACBCB00EB68D1 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -130,11 +143,11 @@
 		B0B267862612D0E30058316D /* CModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CModel.c; sourceTree = "<group>"; };
 		B0B2678F2612D0FE0058316D /* AppConstant.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConstant.plist; sourceTree = "<group>"; };
 		B0B267942612D1140058316D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		B0B267D02612DB370058316D /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "../Frameworks/SwiftHTTP/Debug-iphonesimulator/SwiftHTTP.framework"; sourceTree = "<group>"; };
 		B0B267E12612DD3D0058316D /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		B0B267E82612DF050058316D /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		B0B267F72612E69E0058316D /* Demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Demo.xcdatamodel; sourceTree = "<group>"; };
 		B0B26827261304690058316D /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		B0BA7EF52623298200A57CAD /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../Frameworks/SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
 		B0D4E84126141EEC009D2375 /* SPHPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B038ED7D2614D2B5009148C2 /* SwiftHTTP.framework in Frameworks */,
+				B0BA7F09262329F900A57CAD /* SwiftHTTP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +200,7 @@
 				B0B267232612388B0058316D /* DemoTests */,
 				B0B2672E2612388B0058316D /* DemoUITests */,
 				B0B2670B261238890058316D /* Products */,
-				B0B267CF2612DB370058316D /* Frameworks */,
+				B0BA7EF42623298200A57CAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -363,15 +376,6 @@
 			path = C;
 			sourceTree = "<group>";
 		};
-		B0B267CF2612DB370058316D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B038ED6E2614D0B6009148C2 /* SwiftHTTP.framework */,
-				B0B267D02612DB370058316D /* SwiftHTTP.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		B0B267E02612DD3D0058316D /* Remote */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +391,23 @@
 				B0B267E82612DF050058316D /* Modifiers.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		B0BA7EF42623298200A57CAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0BA7EF52623298200A57CAD /* SwiftHTTP.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0BA7EF62623298200A57CAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0BA7EFB2623298200A57CAD /* SwiftHTTP.framework */,
+				B0BA7EFD2623298200A57CAD /* SwiftHTTPTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B0D4E84826145144009D2375 /* Resources */ = {
@@ -408,7 +429,7 @@
 				B0B26706261238890058316D /* Sources */,
 				B0B26707261238890058316D /* Frameworks */,
 				B0B26708261238890058316D /* Resources */,
-				B038ED7F2614D2B5009148C2 /* Embed Frameworks */,
+				B0BA7F0B262329F900A57CAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -488,6 +509,12 @@
 			mainGroup = B0B26701261238890058316D;
 			productRefGroup = B0B2670B261238890058316D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B0BA7EF62623298200A57CAD /* Products */;
+					ProjectRef = B0BA7EF52623298200A57CAD /* SwiftHTTP.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B0B26709261238890058316D /* Demo */,
@@ -496,6 +523,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B0BA7EFB2623298200A57CAD /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = B0BA7EFA2623298200A57CAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0BA7EFD2623298200A57CAD /* SwiftHTTPTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPTests.xctest;
+			remoteRef = B0BA7EFC2623298200A57CAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B0B26708261238890058316D /* Resources */ = {
@@ -725,7 +769,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = 4TQLD765K3;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "../Frameworks/SwiftHTTP/Debug-iphonesimulator/";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -749,7 +793,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = 4TQLD765K3;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "../Frameworks/SwiftHTTP/Release-iphoneos/SwiftHTTP.framework";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

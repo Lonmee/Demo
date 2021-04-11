@@ -97,9 +97,8 @@ struct UserCreator: View {
     private func addUser() {
         withAnimation {
             let uuid = UUID().uuidString
-            let user = User(id: uuid, name: nick, sex: sex == "male", age: Int(age), contact: [Contact(uid: uuid, phone: phone, email: email, qq: qq, wechat: wechat)])
+            let user = User(id: uuid, name: nick, sex: sex == "male", age: Int(age) ?? 0, contact: [Contact(uid: uuid, phone: phone, email: email, qq: qq, wechat: wechat)])
             httpPOST(api: .USER, param: [user]) { data in
-                print(data)
                 self.mode.wrappedValue.dismiss()
             }
         }

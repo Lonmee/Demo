@@ -29,16 +29,16 @@ struct DemoApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: scenePhase) { scenePhase in
-            switch scenePhase {
-            case .active:
-                print("active")
-            case .inactive:
-                print("inactive")
-            case .background:
-                print("background")
-            default:
-                print(scenePhase.self)
-            }
+//            switch scenePhase {
+//            case .active:
+//                print("active")
+//            case .inactive:
+//                print("inactive")
+//            case .background:
+//                print("background")
+//            default:
+//                print(scenePhase.self)
+//            }
         }
     }
 }
