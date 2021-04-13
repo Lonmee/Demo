@@ -26,18 +26,18 @@ struct UserCreator: View {
     let pickerList = ["male", "female"]
     
     var body: some View {
-        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
+        VStack(alignment: .center, spacing: 0) {
             Text("Profile Creator")
                 .foregroundColor(.blue)
                 .font(.title3)
                 .padding(.all, 20)
             Form {
                 Section (header: Text("Head Icon:")) {
-                    HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 120) {
+                    HStack (alignment: .center, spacing: 120) {
                         icon
                             .resizable()
                             .aspectRatio(1, contentMode: .fill)
-                            .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 60, height: 60, alignment: .center)
                             .padding(.leading, 20)
                         Button("Change", action: {
                             pickerShown.toggle()
@@ -51,7 +51,7 @@ struct UserCreator: View {
                 }
                 Section (header: Text("Infomation:")) {
                     TextField("Nick name", text: $nick)
-                    HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
+                    HStack (alignment: .center, spacing: 10) {
                         Text("Sex")
                         Picker(selection: $sex, label: Text("Sex")) {
                             ForEach(pickerList, id: \.self) { value in
@@ -73,7 +73,7 @@ struct UserCreator: View {
                     TextField("Wechat", text: $wechat)
                 }
             }
-            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
+            HStack(alignment: .center, spacing: 0) {
                 Button(action: {
                     if !nick.isEmpty && !age.isEmpty && !sex.isEmpty {
                         addUser()
