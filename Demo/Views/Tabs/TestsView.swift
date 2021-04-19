@@ -38,13 +38,11 @@ struct TestsView: View {
                 }
                 NavigationLink(
                     destination:
-                        ImagePickerController(sourceType: .camera)
+                        ImagePickerController(sourceType: .savedPhotosAlbum)
                         .navigationBarHidden(true)
                         .statusBar(hidden: true)
                         .tabViewHidden(true)
-                ) {
-                    Text("camera")
-                }
+                ) { Text("camera") }
                 HStack (alignment: .center, spacing: 40){
                     Button("user creator", action: {
                         creatorShown.toggle()
@@ -59,7 +57,6 @@ struct TestsView: View {
                 }
                 Spacer()
             }
-            .tabViewHidden(false)
             .navigationTitle("Tests")
         }
     }

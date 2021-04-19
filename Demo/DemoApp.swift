@@ -38,7 +38,7 @@ struct DemoApp: App {
     var scenePhase
     @StateObject private var modelData = ModelData()
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -46,16 +46,16 @@ struct DemoApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: scenePhase) { newScenePhase in
-//            switch newScenePhase {
-//            case .active:
-//                print("active")
-//            case .inactive:
-//                print("inactive")
-//            case .background:
-//                print("background")
-//            default:
-//                print(scenePhase.self)
-//            }
+            //  switch newScenePhase {
+            //  case .active:
+            //      print("active")
+            //  case .inactive:
+            //      print("inactive")
+            //  case .background:
+            //      print("background")
+            //  default:
+            //      print(scenePhase.self)
+            //  }
         }
     }
 }
