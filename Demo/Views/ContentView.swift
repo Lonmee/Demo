@@ -39,11 +39,13 @@ struct ContentView: View {
         }
         .onAppear {
             //cModuleTest()
+//            let w = UIApplication.shared.windows[0]
+//            let vc = w.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].next as? UITabBarController
+//            vc?.tabBar.isHidden = true
+//            vc?.hidesBottomBarWhenPushed = true
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
-    
-    
 }
 
 private func cModuleTest() {
