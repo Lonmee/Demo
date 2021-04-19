@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct TestsView: View {
     
@@ -35,20 +36,30 @@ struct TestsView: View {
                         }
                     }
                 }
+                NavigationLink(
+                    destination:
+                        ImagePickerController(sourceType: .camera)
+                        .navigationBarHidden(true)
+                        .statusBar(hidden: true)
+                        .tabViewHidden(true)
+                ) {
+                    Text("camera")
+                }
                 HStack (alignment: .center, spacing: 40){
                     Button("user creator", action: {
                         creatorShown.toggle()
                     })
                     .frame(width: 120, height: 40, alignment: .center)
-                    .sheet(isPresented: $creatorShown, content: {UserCreator()})
+                    .sheet(isPresented: $creatorShown, content: {ImagePickerController(sourceType: .camera)})
                     Button("user list", action: {
                         listShown.toggle()
                     })
                     .frame(width: 120, height: 40, alignment: .center)
-                    .sheet(isPresented: $listShown, content: {UserList()})
+                    .sheet(isPresented: $listShown, content: {ImagePickerController(sourceType: .savedPhotosAlbum)})
                 }
                 Spacer()
             }
+            .tabViewHidden(false)
             .navigationTitle("Tests")
         }
     }

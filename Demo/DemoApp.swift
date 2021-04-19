@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+private struct MyEnvironmentKey: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+extension EnvironmentValues {
+    var tabViewHidden: Bool {
+        get { self[MyEnvironmentKey.self] }
+        set { self[MyEnvironmentKey.self] = newValue }
+    }
+}
+
+extension View {
+    func tabViewHidden(_ tabViewHidden: Bool) -> some View {
+        environment(\.tabViewHidden, tabViewHidden)
+    }
+}
+
 class AppDelegate: NSObject, UIApplicationDelegate {
     func applicationDidReceiveMemoryWarning(_ application: UIApplication) -> Void {
         print("MemoryWarning")
@@ -28,8 +45,8 @@ struct DemoApp: App {
                 .environmentObject(modelData)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
-        .onChange(of: scenePhase) { scenePhase in
-//            switch scenePhase {
+        .onChange(of: scenePhase) { newScenePhase in
+//            switch newScenePhase {
 //            case .active:
 //                print("active")
 //            case .inactive:

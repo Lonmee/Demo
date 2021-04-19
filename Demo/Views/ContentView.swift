@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @Environment(\.tabViewHidden) var tabViewHidden: Bool
+    @Environment(\.presentationMode) var mode
     @State private var selection: Tab = .first
     
     enum Tab {
@@ -37,8 +39,32 @@ struct ContentView: View {
         }
         .onAppear {
             //cModuleTest()
+            checkTabViewBar()
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    private func checkTabViewBar() -> Void {
+        let windows = UIApplication.shared.windows
+        let mw = windows.filter({ $0.windowLevel == .normal })[0]
+        //        mw.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[1].isHidden = tabViewHidden
+        //        print(type(of: mw.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[1]) == UITabBar.self)
+        print(type(of: mw.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[1].delegate))
+//        tabView.hidesBottomBarWhenPushed = true
+//        print(type(of: mw.subviews[0].subviews[0].subviews[0]))
+    }
+    
+    private func find<T, V>(_ typee: T.Type, views: [V]) -> T? where T: UIView, V: UIView {
+        print(views.count)
+        for v in views {
+            print(type(of: v))
+            if type(of: v) == typee {
+                return v as? T
+            } else {
+                return find(typee, views: v.subviews)
+            }
+        }
+        return nil
     }
 }
 
