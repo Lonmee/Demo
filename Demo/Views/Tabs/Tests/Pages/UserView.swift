@@ -8,7 +8,6 @@
 
 import SwiftUI
 import CoreData
-import SwiftHTTP
 
 struct UserView: View {
     @State var users: [User] = [User]()
