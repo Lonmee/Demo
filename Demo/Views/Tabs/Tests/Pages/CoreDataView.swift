@@ -57,6 +57,19 @@ struct CoreDataView: View {
             }
         }
     }
+    
+    func getCurrentViewController(base: UIViewController? = UIApplication.shared.windows[0].rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return getCurrentViewController(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController {
+            return getCurrentViewController(base: tab.selectedViewController)
+        }
+        if let presented = base?.presentedViewController {
+            return getCurrentViewController(base: presented)
+        }
+        return base
+    }
 }
 
 private let itemFormatter: DateFormatter = {

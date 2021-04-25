@@ -20,7 +20,6 @@ struct TestsView: View {
         ("CoreData", AnyView(CoreDataView())),
         ("User", AnyView(UserView())),
         ("Search", AnyView(SearchPage())),
-        ("Search2", AnyView(SearchPage2())),
     ]
     
     @State var creatorShown = false

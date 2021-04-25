@@ -12,7 +12,7 @@ struct FirstView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("ao3jn7")
+                Image("firstImg")
                     .resizable()
                     .scaledToFill()
                     .frame(height: 200)
