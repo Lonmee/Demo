@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01644BB26368B4000F73F69 /* TabLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01644BA26368B4000F73F69 /* TabLabel.swift */; };
+		B01644CF2636EA0500F73F69 /* FourthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01644CE2636EA0400F73F69 /* FourthView.swift */; };
 		B0222BAC262ECF4100F8471B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B0222BAB262ECF4100F8471B /* Alamofire */; };
 		B023A77626171B8800E42753 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023A77526171B8800E42753 /* SearchPage.swift */; };
 		B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7CFC261328A2007EB7FD /* CoreDataView.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B01644BA26368B4000F73F69 /* TabLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLabel.swift; sourceTree = "<group>"; };
+		B01644CE2636EA0400F73F69 /* FourthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthView.swift; sourceTree = "<group>"; };
 		B023A77526171B8800E42753 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 		B03B7CFC261328A2007EB7FD /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		B03B7D112613656B007EB7FD /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 				B0B2674B2612D0310058316D /* SecondView.swift */,
 				B0B267582612D07F0058316D /* Tests */,
 				B0B2675D2612D07F0058316D /* TestsView.swift */,
+				B01644CE2636EA0400F73F69 /* FourthView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				B0B267782612D09B0058316D /* CapsuleText.swift */,
 				B0D4E84126141EEC009D2375 /* SPHPickerViewController.swift */,
 				B0D7121C262AD86500AA362C /* ImagePickerController.swift */,
+				B01644BA26368B4000F73F69 /* TabLabel.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B267692612D07F0058316D /* SubNavigation.swift in Sources */,
+				B01644BB26368B4000F73F69 /* TabLabel.swift in Sources */,
 				B0B2676C2612D07F0058316D /* UserCreator.swift in Sources */,
 				B0B267732612D07F0058316D /* Large_views.swift in Sources */,
 				B0B267792612D09B0058316D /* CapsuleText.swift in Sources */,
@@ -546,6 +553,7 @@
 				B0B2678A2612D0E30058316D /* CModel.c in Sources */,
 				B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */,
 				B0B2670E261238890058316D /* DemoApp.swift in Sources */,
+				B01644CF2636EA0500F73F69 /* FourthView.swift in Sources */,
 				B0B267E92612DF050058316D /* Modifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
