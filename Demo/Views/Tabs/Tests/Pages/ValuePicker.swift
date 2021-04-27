@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct ValuePicker: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var data: String = ""
     @State var submit: Bool = false
+    @State var darkModeOn: Bool = false
     let pickerList = ["male", "female", "both"]
     
     var body: some View {
@@ -30,6 +32,7 @@ struct ValuePicker: View {
             Button(action: { self.submit.toggle() }) {
                 Text("Submit")
             }
+            Toggle("Dark mode", isOn: $darkModeOn)
             Spacer()
         }
         .padding(.all)
@@ -40,6 +43,13 @@ struct ValuePicker: View {
         .alert(isPresented: $submit, content: {
             Alert(title: Text("Submitted"), message: Text("Value: \(data)"))
         })
+        .preferredColorScheme(darkModeOn ? .dark : .light)
+    }
+    
+    init() {
+        print("scheme: ", colorScheme)
+        darkModeOn = colorScheme == .dark
+        print("darkMode", darkModeOn)
     }
 }
 

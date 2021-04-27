@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B01644BB26368B4000F73F69 /* TabLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01644BA26368B4000F73F69 /* TabLabel.swift */; };
 		B01644CF2636EA0500F73F69 /* FourthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01644CE2636EA0400F73F69 /* FourthView.swift */; };
+		B01644EE2637CBA100F73F69 /* ViewsPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01644ED2637CBA100F73F69 /* ViewsPool.swift */; };
 		B0222BAC262ECF4100F8471B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B0222BAB262ECF4100F8471B /* Alamofire */; };
 		B023A77626171B8800E42753 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023A77526171B8800E42753 /* SearchPage.swift */; };
 		B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7CFC261328A2007EB7FD /* CoreDataView.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		B01644BA26368B4000F73F69 /* TabLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLabel.swift; sourceTree = "<group>"; };
 		B01644CE2636EA0400F73F69 /* FourthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthView.swift; sourceTree = "<group>"; };
+		B01644ED2637CBA100F73F69 /* ViewsPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsPool.swift; sourceTree = "<group>"; };
 		B023A77526171B8800E42753 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 		B03B7CFC261328A2007EB7FD /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		B03B7D112613656B007EB7FD /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		B0B26740261238E00058316D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B01644ED2637CBA100F73F69 /* ViewsPool.swift */,
 				B0B2670F261238890058316D /* ContentView.swift */,
 				B0B267452612D0040058316D /* Tabs */,
 				B0B267E72612DF050058316D /* Modifiers */,
@@ -531,6 +534,7 @@
 				B0B267472612D02B0058316D /* FirstView.swift in Sources */,
 				B0B267882612D0E30058316D /* Data.swift in Sources */,
 				B0D4E84226141EEC009D2375 /* SPHPickerViewController.swift in Sources */,
+				B01644EE2637CBA100F73F69 /* ViewsPool.swift in Sources */,
 				B0B267F82612E69E0058316D /* Demo.xcdatamodeld in Sources */,
 				B0B26828261304690058316D /* HTTPMethod.swift in Sources */,
 				B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */,

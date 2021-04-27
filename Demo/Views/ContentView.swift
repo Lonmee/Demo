@@ -30,26 +30,26 @@ struct ContentView: View {
     
     var body: some View {
         // MARK: TabView using
-        //TabView(selection: $selection) {
-        //    FirstView()
-        //        .tabItem {
-        //            Label("First", systemImage: "1.square.fill")
-        //        }
-        //        .tag(Tabs.first)
-        //    SecondView()
-        //        .tabItem {
-        //            Label("Second", systemImage: "2.square.fill")
-        //        }
-        //        .tag(Tabs.second)
-        //    TestsView()
-        //        .tabItem {
-        //            Label("Tests", systemImage: "3.square.fill")
-        //        }
-        //        .tag(Tabs.tests)
-        //}
-        //.onAppear {
-        //    //cModuleTest()
-        //}
+        // TabView(selection: $selection) {
+        //     FirstView()
+        //         .tabItem {
+        //             Label("First", systemImage: "1.square.fill")
+        //         }
+        //         .tag(Tabs.first)
+        //     SecondView()
+        //         .tabItem {
+        //             Label("Second", systemImage: "2.square.fill")
+        //         }
+        //         .tag(Tabs.second)
+        //     TestsView()
+        //         .tabItem {
+        //             Label("Tests", systemImage: "3.square.fill")
+        //         }
+        //         .tag(Tabs.tests)
+        // }
+        // .onAppear {
+        //     //cModuleTest()
+        // }
         //.navigationViewStyle(StackNavigationViewStyle())
         //.colorScheme(.dark)
         
@@ -72,15 +72,14 @@ struct ContentView: View {
                                 Color(red: 0.07, green: 0.07, blue: 0.07) :
                                 Color(red: 0.97, green: 0.97, blue: 0.97))
                 // Rectangle()
-                //     .frame(height: 40)
-                //     .foregroundColor(Color(red: 0.97, green: 0.97, blue: 0.97))
+                // .frame(height: 40)
+                // .foregroundColor(Color(red: 0.97, green: 0.97, blue: 0.97))
             }
         }
         .onAppear {
-            //cModuleTest()
-            print(UIApplication.shared.windows[0].safeAreaInsets)
+            // cModuleTest()
+            // print(UIApplication.shared.windows[0].safeAreaInsets)
         }
-        .colorScheme(.dark)
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
