@@ -14,7 +14,7 @@ struct TestsView: View {
     private let pages: [(String, AnyView)] = [
         ("Navigations test", AnyView(Navigations())),
         ("TextFieldAndForm test", AnyView(TextFieldAndForm())),
-        ("ValuePicker test", AnyView(ValuePicker())),
+        ("ControlsView", AnyView(ControlsView())),
         ("List & Item test", AnyView(List_Item())),
         ("Large views test", AnyView(Large_views())),
         ("CoreData", AnyView(CoreDataView())),
@@ -56,6 +56,10 @@ struct TestsView: View {
             Spacer()
         }
         .navigationTitle("Tests")
+    }
+    
+    init() {
+        print("TestsView init")
     }
 }
 

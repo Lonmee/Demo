@@ -51,7 +51,11 @@ struct FirstView: View {
                             Color(red: 0.97, green: 0.97, blue: 0.97))
         }
         .navigationTitle("First")
-        .ignoresSafeArea()
+        .ignoresSafeArea(.container, edges: .top)
+    }
+    
+    init() {
+        print("FirstView init")
     }
     
     func getImgByTab(_ tab: Tabs) -> String {

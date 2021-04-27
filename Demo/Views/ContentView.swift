@@ -12,21 +12,7 @@ struct ContentView: View {
     @Environment(\.tabViewHidden) var tabViewHidden: Bool
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var mode
-    @State private var selection: Tabs = .first
-    
-    private enum Tabs {
-        case first
-        case second
-        case tests
-        case fourth
-    }
-    
-    private let tabs = [
-        (Tabs.first, "1st", "1.square.fill"),
-        (Tabs.second, "2nd", "2.square.fill"),
-        (Tabs.tests, "3rd", "3.square.fill"),
-        (Tabs.fourth, "4th", "4.square.fill"),
-    ]
+    @State private var selection: ViewsPool.Tabs = .first
     
     var body: some View {
         // MARK: TabView using
@@ -35,35 +21,36 @@ struct ContentView: View {
         //         .tabItem {
         //             Label("First", systemImage: "1.square.fill")
         //         }
-        //         .tag(Tabs.first)
+        //         .tag(ViewsPool.Tabs.first)
         //     SecondView()
         //         .tabItem {
         //             Label("Second", systemImage: "2.square.fill")
         //         }
-        //         .tag(Tabs.second)
+        //         .tag(ViewsPool.Tabs.second)
+        //
         //     TestsView()
         //         .tabItem {
         //             Label("Tests", systemImage: "3.square.fill")
         //         }
-        //         .tag(Tabs.tests)
+        //         .tag(ViewsPool.Tabs.tests)
         // }
         // .onAppear {
         //     //cModuleTest()
         // }
-        //.navigationViewStyle(StackNavigationViewStyle())
-        //.colorScheme(.dark)
+        // .navigationViewStyle(StackNavigationViewStyle())
         
         // MARK: CustomTabView using
+        let tabs = ViewsPool.tabs
         NavigationView {
             VStack(alignment: .center, spacing: 0) {
-                getViewByTab(selection)
+                tabs[selection.rawValue].3
                 Rectangle()
                     .frame(height: 0.5, alignment: .center)
                     .foregroundColor(colorScheme == .dark ?
                                         Color(red: 0.2, green: 0.2, blue: 0.2, opacity: 0.6) :
                                         Color(red: 0.815, green: 0.815, blue: 0.815))
                 HStack {
-                    ForEach(tabs, id: \.self.0) { id, label, icon in
+                    ForEach(tabs, id: \.self.0) { id, label, icon, _ in
                         TabLabel(id: id, label: label, systemName: icon, selection: $selection)
                     }
                 }
@@ -83,17 +70,8 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    private func getViewByTab(_ tab: Tabs) -> AnyView {
-        switch tab {
-        case .first:
-            return AnyView(FirstView())
-        case .second:
-            return AnyView(SecondView())
-        case .tests:
-            return AnyView(TestsView())
-        case .fourth:
-            return AnyView(FourthView())
-        }
+    init() {
+        print("ContentView init")
     }
 }
 

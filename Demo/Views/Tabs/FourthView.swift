@@ -9,17 +9,8 @@ import SwiftUI
 
 struct FourthView: View {
     var body: some View {
-        VStack {
-            Text("This text is outside of the top safe area.")
-                .edgesIgnoringSafeArea(.top)
-                .border(Color.purple)
-            Spacer()
-            Text("This text is inside VStack.")
-                .edgesIgnoringSafeArea(.bottom)
-                .border(Color.yellow)
-        }
-        .navigationTitle("Fourth")
-        .border(Color.gray)
+        Text("Fourth view")
+        Spacer()
     }
 }
 

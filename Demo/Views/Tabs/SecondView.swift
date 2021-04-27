@@ -34,6 +34,10 @@ struct SecondView: View {
         }
         .navigationTitle("Second")
     }
+    
+    init() {
+        print("SecondView init")
+    }
 }
 
 struct Second_Previews: PreviewProvider {
