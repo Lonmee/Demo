@@ -15,7 +15,9 @@ struct TabLabel<T>: View where T: Equatable {
     var body: some View {
         Spacer()
         Button(action: {
-            selection = id
+            withTransaction(Transaction(animation: .easeInOut(duration: 1))) {
+                selection = id
+            }
         }, label: {
             VStack(alignment: .center, spacing: 2) {
                 Image(systemName: systemName)
