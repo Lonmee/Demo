@@ -11,6 +11,7 @@ struct FourthView: View {
     var body: some View {
         Text("Fourth view")
         Spacer()
+            .navigationTitle("Fourth")
     }
 }
 

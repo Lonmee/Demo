@@ -12,6 +12,9 @@
 		B01644EE2637CBA100F73F69 /* ViewsPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01644ED2637CBA100F73F69 /* ViewsPool.swift */; };
 		B0222BAC262ECF4100F8471B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B0222BAB262ECF4100F8471B /* Alamofire */; };
 		B023A77626171B8800E42753 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023A77526171B8800E42753 /* SearchPage.swift */; };
+		B03444AB263BB3B2008CD4DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03444AD263BB3B2008CD4DB /* InfoPlist.strings */; };
+		B03444B1263BB3DD008CD4DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03444B3263BB3DD008CD4DB /* Localizable.strings */; };
+		B03444CF263BE5D1008CD4DB /* Plurals.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B03444D1263BE5D1008CD4DB /* Plurals.stringsdict */; };
 		B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7CFC261328A2007EB7FD /* CoreDataView.swift */; };
 		B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7D112613656B007EB7FD /* UserDetails.swift */; };
 		B066BE33261ACBCB00EB68D1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE32261ACBCB00EB68D1 /* ModelData.swift */; };
@@ -75,6 +78,12 @@
 		B01644CE2636EA0400F73F69 /* FourthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthView.swift; sourceTree = "<group>"; };
 		B01644ED2637CBA100F73F69 /* ViewsPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsPool.swift; sourceTree = "<group>"; };
 		B023A77526171B8800E42753 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
+		B03444AC263BB3B2008CD4DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B03444AE263BB3B6008CD4DB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		B03444B2263BB3DD008CD4DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B03444B4263BB3E2008CD4DB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B03444D0263BE5D1008CD4DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Plurals.stringsdict; sourceTree = "<group>"; };
+		B03444D2263BE5D4008CD4DB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Plurals.stringsdict"; sourceTree = "<group>"; };
 		B03B7CFC261328A2007EB7FD /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		B03B7D112613656B007EB7FD /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		B066BE32261ACBCB00EB68D1 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -179,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				B0B2670C261238890058316D /* Demo */,
+				B0B267112612388B0058316D /* Assets.xcassets */,
 				B0B267232612388B0058316D /* DemoTests */,
 				B0B2672E2612388B0058316D /* DemoUITests */,
 				B0B2670B261238890058316D /* Products */,
@@ -203,7 +213,6 @@
 				B0B26741261239010058316D /* Model */,
 				B0D4E84826145144009D2375 /* Resources */,
 				B0B2670D261238890058316D /* DemoApp.swift */,
-				B0B267112612388B0058316D /* Assets.xcassets */,
 				B0B2671B2612388B0058316D /* Info.plist */,
 				B0B267F62612E69E0058316D /* Demo.xcdatamodeld */,
 				B0B267132612388B0058316D /* Preview Content */,
@@ -381,6 +390,9 @@
 			children = (
 				B066BE39261ACDF500EB68D1 /* landmarkData.json */,
 				B0B2678F2612D0FE0058316D /* AppConstant.plist */,
+				B03444AD263BB3B2008CD4DB /* InfoPlist.strings */,
+				B03444B3263BB3DD008CD4DB /* Localizable.strings */,
+				B03444D1263BE5D1008CD4DB /* Plurals.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -473,6 +485,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B0B26701261238890058316D;
 			packageReferences = (
@@ -495,8 +508,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B267902612D0FE0058316D /* AppConstant.plist in Resources */,
+				B03444AB263BB3B2008CD4DB /* InfoPlist.strings in Resources */,
 				B066BE3A261ACDF500EB68D1 /* landmarkData.json in Resources */,
+				B03444B1263BB3DD008CD4DB /* Localizable.strings in Resources */,
 				B0B267152612388B0058316D /* Preview Assets.xcassets in Resources */,
+				B03444CF263BE5D1008CD4DB /* Plurals.stringsdict in Resources */,
 				B0B267122612388B0058316D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +608,36 @@
 			targetProxy = B0B2672C2612388B0058316D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B03444AD263BB3B2008CD4DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B03444AC263BB3B2008CD4DB /* en */,
+				B03444AE263BB3B6008CD4DB /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B03444B3263BB3DD008CD4DB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B03444B2263BB3DD008CD4DB /* en */,
+				B03444B4263BB3E2008CD4DB /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B03444D1263BE5D1008CD4DB /* Plurals.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B03444D0263BE5D1008CD4DB /* en */,
+				B03444D2263BE5D4008CD4DB /* zh-Hans */,
+			);
+			name = Plurals.stringsdict;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B0B267322612388B0058316D /* Debug */ = {

@@ -1,0 +1,14 @@
+/* 
+  InfoPlist.strings
+  Demo
+
+  Created by Lonmee on 4/30/21.
+  
+*/
+
+/* Bundle name */
+"CFBundleName" = "Demo";
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Head icon taking";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Choose the photo as head icon";

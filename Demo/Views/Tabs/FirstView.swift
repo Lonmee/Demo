@@ -51,7 +51,6 @@ struct FirstView: View {
                             Color(red: 0.07, green: 0.07, blue: 0.07) :
                             Color(red: 0.97, green: 0.97, blue: 0.97))
         }
-        .navigationBarHidden(true)
         .navigationTitle("First")
         .ignoresSafeArea(.container, edges: .top)
     }

@@ -1,0 +1,14 @@
+/* 
+  InfoPlist.strings
+  Demo
+
+  Created by Lonmee on 4/30/21.
+  
+*/
+
+/* Bundle name */
+"CFBundleName" = "中文小样";
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "用于拍摄头像";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "用于选择头像";

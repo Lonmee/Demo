@@ -1,0 +1,163 @@
+/* 
+  Localizable.strings
+  Demo
+
+  Created by Lonmee on 4/30/21.
+  
+*/
+
+/* No comment provided by engineer. */
+"Age" = "Age";
+
+/* No comment provided by engineer. */
+"Age: " = "Age: ";
+
+/* No comment provided by engineer. */
+"camera" = "camera";
+
+/* No comment provided by engineer. */
+"Canel" = "Canel";
+
+/* No comment provided by engineer. */
+"Colored " = "Colored ";
+
+/* No comment provided by engineer. */
+"Contack:" = "Contack:";
+
+/* No comment provided by engineer. */
+"Create" = "Create";
+
+/* No comment provided by engineer. */
+"Detail View" = "Detail View";
+
+/* No comment provided by engineer. */
+"Done" = "Done";
+
+/* No comment provided by engineer. */
+"Email" = "Email";
+
+/* No comment provided by engineer. */
+"Email: " = "Email: ";
+
+/* No comment provided by engineer. */
+"First" = "First";
+
+/* No comment provided by engineer. */
+"Form" = "Form";
+
+/* No comment provided by engineer. */
+"Fourth view" = "Fourth view";
+
+/* No comment provided by engineer. */
+"Go navigation: %@" = "Go navigation: %@";
+
+/* No comment provided by engineer. */
+"Go next navigation: %@" = "Go next navigation: %@";
+
+/* No comment provided by engineer. */
+"Head Icon:" = "Head Icon:";
+
+/* No comment provided by engineer. */
+"Hello, World!" = "Hello, World!";
+
+/* No comment provided by engineer. */
+"Infomation:" = "Infomation:";
+
+/* No comment provided by engineer. */
+"Item at %@" = "Item at %@";
+
+/* No comment provided by engineer. */
+"Johnny Appleseed" = "Johnny Appleseed";
+
+/* No comment provided by engineer. */
+"List & Item" = "List & Item";
+
+/* No comment provided by engineer. */
+"Navigations" = "Navigations";
+
+/* No comment provided by engineer. */
+"Nick name" = "Nick name";
+
+/* No comment provided by engineer. */
+"Nickname: " = "Nickname: ";
+
+/* No comment provided by engineer. */
+"Occupation: Programmer" = "Occupation: Programmer";
+
+/* No comment provided by engineer. */
+"People" = "People";
+
+/* No comment provided by engineer. */
+"Perfect & Create" = "Perfect & Create";
+
+/* No comment provided by engineer. */
+"Phone" = "Phone";
+
+/* No comment provided by engineer. */
+"Phone: " = "Phone: ";
+
+/* No comment provided by engineer. */
+"Picker" = "Picker";
+
+/* No comment provided by engineer. */
+"Picker test" = "Picker test";
+
+/* No comment provided by engineer. */
+"Profile Creator" = "Profile Creator";
+
+/* No comment provided by engineer. */
+"QQ" = "QQ";
+
+/* No comment provided by engineer. */
+"QQ: " = "QQ: ";
+
+/* No comment provided by engineer. */
+"Search Bar" = "Search Bar";
+
+/* No comment provided by engineer. */
+"Second" = "Second";
+
+/* No comment provided by engineer. */
+"selected value: %@" = "selected value: %@";
+
+/* No comment provided by engineer. */
+"Sex" = "Sex";
+
+/* No comment provided by engineer. */
+"Sex: " = "Sex: ";
+
+/* No comment provided by engineer. */
+"Submit" = "Submit";
+
+/* No comment provided by engineer. */
+"Submitted" = "Submitted";
+
+/* No comment provided by engineer. */
+"SwifUI " = "SwifUI ";
+
+/* No comment provided by engineer. */
+"Text" = "Text";
+
+/* No comment provided by engineer. */
+"TextFieldAndForm" = "TextFieldAndForm";
+
+/* No comment provided by engineer. */
+"Thrid" = "Thrid";
+
+/* No comment provided by engineer. */
+"User info" = "User info";
+
+/* No comment provided by engineer. */
+"Value: %@" = "Value: %@";
+
+/* No comment provided by engineer. */
+"Virture" = "Virture";
+
+/* No comment provided by engineer. */
+"Wechat" = "Wechat";
+
+/* No comment provided by engineer. */
+"Wechat: " = "Wechat: ";
+
+/* No comment provided by engineer. */
+"xx" = "xx";

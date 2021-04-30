@@ -66,6 +66,10 @@ struct ContentView: View {
         .onAppear {
             // cModuleTest()
             // print(UIApplication.shared.windows[0].safeAreaInsets)
+            
+//            let format = NSLocalizedString("%d file(s) remaining", tableName: "Plurals", comment: "")
+//            let str = String.localizedStringWithFormat(format, 0)
+//            print(str)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
