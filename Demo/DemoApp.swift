@@ -23,6 +23,7 @@ struct DemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//                .colorScheme(.dark)
                 .environmentObject(modelData)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

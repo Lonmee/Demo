@@ -53,8 +53,8 @@ struct UserDetails: View {
     }
 }
 
-//struct UserDetails_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserDetails(user: <#T##Binding<User>#>)
-//    }
-//}
+struct UserDetails_Previews: PreviewProvider {
+    static var previews: some View {
+        UserDetails(user: .init(id: "123", name: "xx", sex: true, age: 33, contact: []))
+    }
+}

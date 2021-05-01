@@ -10,7 +10,13 @@ import SwiftUI
 
 struct SecondView: View {
     var body: some View {
-        VStack(spacing: 10){
+        Image("10dwio4")
+            .resizable()
+            .scaledToFill()
+            .frame(height: 200)
+            .clipped()
+        ScrollView(){
+            Spacer(minLength: 20)
             CapsuleText(text: "Frist")
                 .onTapGesture(count: 1, perform: {
                     accountReq(name: "Lonmee") { data in
@@ -31,12 +37,9 @@ struct SecondView: View {
                 .foregroundColor(.blue)
             Rectangle()
                 .foregroundColor(.pink)
+                .frame(height: 80, alignment: .bottom)
         }
-        .navigationTitle("Second")
-    }
-    
-    init() {
-        print("SecondView init")
+        .padding([.horizontal, .bottom])
     }
 }
 

@@ -22,44 +22,69 @@ struct TestsView: View {
         ("Search", AnyView(SearchPage())),
     ]
     
-    @State var creatorShown = false
-    @State var listShown = false
+    @State var cameraShown = false
+    @State var albumShown = false
     
     var body: some View {
-        VStack{
-            Form {
-                ForEach(pages, id: \.self.0) { (name, instance) in
-                    NavigationLink(destination: AnyView(instance)) {
-                        Text(name)
-                    }
+        Image("10eiy63")
+            .resizable()
+            .scaledToFill()
+            .frame(minHeight: 100, maxHeight: 200)
+            .clipped()
+        Form {
+            ForEach(pages, id: \.self.0) { (name, instance) in
+                NavigationLink(destination: AnyView(instance)) {
+                    Text(name)
                 }
             }
+        }
+        Divider()
+        Text("in page")
+            .font(.footnote)
+            .foregroundColor(.secondary)
+        Divider()
+        HStack {
+            Spacer()
             NavigationLink(
                 destination:
-                    ImagePickerController(sourceType: .savedPhotosAlbum)
+                    ImagePickerController(sourceType: .camera)
                     .navigationBarHidden(true)
                     .statusBar(hidden: true)
                     .tabViewHidden(true)
             ) { Text("camera") }
-            HStack (alignment: .center, spacing: 40){
-                Button("user creator", action: {
-                    creatorShown.toggle()
-                })
-                .frame(width: 120, height: 40, alignment: .center)
-                .sheet(isPresented: $creatorShown, content: {ImagePickerController(sourceType: .camera)})
-                Button("user list", action: {
-                    listShown.toggle()
-                })
-                .frame(width: 120, height: 40, alignment: .center)
-                .sheet(isPresented: $listShown, content: {ImagePickerController(sourceType: .savedPhotosAlbum)})
-            }
+            Spacer()
+            Divider()
+            Spacer()
+            NavigationLink(
+                destination: ImagePickerController(sourceType: .savedPhotosAlbum)
+                    .navigationBarHidden(true)
+                    .statusBar(hidden: true)
+                    .tabViewHidden(true)
+            ) { Text("album") }
             Spacer()
         }
-        .navigationTitle("Tests")
-    }
-    
-    init() {
-        print("TestsView init")
+        .frame(height: 40)
+        Divider()
+        Text("in sheet")
+            .font(.footnote)
+            .foregroundColor(.secondary)
+        Divider()
+        HStack {
+            Spacer()
+            Button("camera", action: {
+                cameraShown.toggle()
+            })
+            .sheet(isPresented: $cameraShown, content: {ImagePickerController(sourceType: .camera)})
+            Spacer()
+            Divider()
+            Spacer()
+            Button("album", action: {
+                albumShown.toggle()
+            })
+            .sheet(isPresented: $albumShown, content: {ImagePickerController(sourceType: .savedPhotosAlbum)})
+            Spacer()
+        }
+        .frame(height: 40)
     }
 }
 

@@ -9,9 +9,12 @@ import SwiftUI
 
 struct FourthView: View {
     var body: some View {
-        Text("Fourth view")
+        Image("10dzrq9")
+            .resizable()
+            .scaledToFill()
+            .frame(height: 200)
+            .clipped()
         Spacer()
-            .navigationTitle("Fourth")
     }
 }
 

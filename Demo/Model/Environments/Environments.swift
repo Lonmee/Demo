@@ -26,7 +26,6 @@ extension View {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        print("willFinishLaunchingWithOptions")
         return true
     }
     

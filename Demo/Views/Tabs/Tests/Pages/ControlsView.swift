@@ -46,10 +46,6 @@ struct ControlsView: View {
         })
 //        .preferredColorScheme(darkModeOn ? .dark : .light)
     }
-    
-    init() {
-        print("ControlsView init")
-    }
 }
 
 struct ValuePicker_Previews: PreviewProvider {

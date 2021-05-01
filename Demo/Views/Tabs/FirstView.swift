@@ -28,13 +28,33 @@ struct FirstView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            Image(getImgByTab(selection))
-                .resizable()
-                .scaledToFill()
-                .frame(height: 200)
-                .clipped()
-                .rotationEffect(.zero)
-//                .transformEffect(.identity)
+            switch selection {
+            case .first:
+                Image("first")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+            case .second:
+                Image("second")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+            
+            case .third:
+                Image("third")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+            case .fourth:
+                Image("fourth")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+            }
             Spacer()
             Rectangle()
                 .frame(height: 0.5, alignment: .center)
@@ -51,38 +71,7 @@ struct FirstView: View {
                             Color(red: 0.07, green: 0.07, blue: 0.07) :
                             Color(red: 0.97, green: 0.97, blue: 0.97))
         }
-        .navigationTitle("First")
         .ignoresSafeArea(.container, edges: .top)
-    }
-    
-    init() {
-        print("FirstView init")
-    }
-    
-    func getImgByTab(_ tab: Tabs) -> String {
-        switch tab {
-        case .first:
-            return "first"
-        case .second:
-            return "second"
-        case .third:
-            return "third"
-        case .fourth:
-            return "fourth"
-        }
-    }
-    
-    func getViewByTab(_ tab: Tabs) -> AnyView {
-        switch tab {
-        case .first:
-            return AnyView(SecondView())
-        case .second:
-            return AnyView(SecondView())
-        case .third:
-            return AnyView(TestsView())
-        case .fourth:
-            return AnyView(SecondView())
-        }
     }
 }
 

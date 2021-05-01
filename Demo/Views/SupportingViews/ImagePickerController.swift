@@ -21,13 +21,11 @@ struct ImagePickerController: UIViewControllerRepresentable  {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = sourceType
-        // MARK: why does't work ?
-        picker.hidesBottomBarWhenPushed = true
         return picker
     }
     
     func updateUIViewController(_ picker: UIImagePickerController, context: Context) {
-        // FIXME: print("update")
+        // MARK: print("update")
     }
     
     class Coordinator: NSObject, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
