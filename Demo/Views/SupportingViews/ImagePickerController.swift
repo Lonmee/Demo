@@ -13,6 +13,7 @@ import Foundation
 struct ImagePickerController: UIViewControllerRepresentable  {
     @Environment(\.presentationMode) var mode
     @State var sourceType: UIImagePickerController.SourceType
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -21,6 +22,15 @@ struct ImagePickerController: UIViewControllerRepresentable  {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = sourceType
+        picker.allowsEditing = true
+        
+        if sourceType == .camera {
+            picker.mediaTypes = ["public.image", "public.movie"]
+            picker.showsCameraControls = true
+        } else {
+            
+        }
+        
         return picker
     }
     

@@ -4,6 +4,8 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Head icon taking</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>RecordWithVideo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Choose the photo as head icon</string>
 	<key>NSAppTransportSecurity</key>
