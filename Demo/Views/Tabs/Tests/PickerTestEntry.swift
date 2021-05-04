@@ -12,9 +12,17 @@ struct PickerTestEntry: View {
     @State private var albumShown = false
     @State private var showAlert = false
     
-    fileprivate var maskView: some View {
+    fileprivate var albumMaskView: some View {
         VStack(spacing: 0) {
-            Rectangle().frame(height: 45)
+            Rectangle()
+                .opacity(0.5)
+                .overlay(Circle().frame(width: UIScreen.main.bounds.width - 2))
+        }
+    }
+    
+    fileprivate var cameraMaskView: some View {
+        VStack(spacing: 0) {
+            Rectangle().frame(height: 44)
             Rectangle()
                 .opacity(0.5)
                 .overlay(Circle())
@@ -26,7 +34,8 @@ struct PickerTestEntry: View {
         AnyView(NavigationLink(
             destination:
                 ImagePickerController(sourceType: .camera)
-                .mask(maskView)
+                .mask(cameraMaskView)
+                .background(Color.black)
                 .navigationBarHidden(true)
                 .statusBar(hidden: true)
         ) { Text("camera") })
@@ -35,6 +44,8 @@ struct PickerTestEntry: View {
     private var AlbumLink: AnyView {
         AnyView( NavigationLink(
             destination: ImagePickerController(sourceType: .savedPhotosAlbum)
+                .mask(albumMaskView)
+                .background(Color.black)
                 .navigationBarHidden(true)
                 .statusBar(hidden: true)
                 .tabViewHidden(true)
