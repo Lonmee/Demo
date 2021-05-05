@@ -5,6 +5,7 @@
 //  Created by Lonmee on 5/4/21.
 //
 import SwiftUI
+import UIKit
 import Photos
 
 struct PhotoPicker: View {
@@ -13,21 +14,32 @@ struct PhotoPicker: View {
     @State var photoList: [PHAsset] = []
     @State var albumList: [PHAssetCollection] = []
     @State var userAlbumList: [PHCollection] = []
+    
+    @State var allPhotos: [UIImage] = []
+    
+    fileprivate let imageManager = PHCachingImageManager()
+    
     var body: some View {
-        let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 40, alignment: .center), count: 2)
-        let rows: [GridItem] = Array(repeating: .init(.fixed(20)), count: 2)
+        // let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 40, alignment: .center), count: 2)
+        let rows: [GridItem] = Array(repeating: .init(.flexible(minimum: 130), spacing: 2, alignment: .center), count: 3)
         NavigationView {
-            VStack {
-                LazyHGrid(rows: rows, alignment: .top) {
-                    ForEach((0...5), id: \.self) {
-                        let codepoint = $0 + 0x1f600
-                        let codepointString = String(format: "%02X", codepoint)
-                        Text("\(codepointString)")
-                            .font(.footnote)
-                        let emoji = String(Character(UnicodeScalar(codepoint)!))
-                        Text("\(emoji)")
-                            .font(.largeTitle)
+            ScrollView(.vertical) {
+                LazyVGrid(columns: rows, spacing: 2) {
+                    ForEach(0...4, id: \.self) { i in
+                        Image("IMG_F75DAC7E7AA3-1")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 120, height: 120, alignment: .center)
+                            .clipped()
                     }
+                    
+                    //                    ForEach(allPhotos, id: \.self) { uiIma in
+                    //                        Image(uiImage: uiIma)
+                    //                            .resizable()
+                    //                            .scaledToFill()
+                    //                            .frame(width: 120, height: 120, alignment: .center)
+                    //                            .clipped()
+                    //                    }
                 }
                 
                 //                ScrollView {
@@ -58,6 +70,7 @@ struct PhotoPicker: View {
                 //     }
                 // }
             }
+            .padding(.top, -50)
             .toolbar(content: {
                 HStack {
                     Button("Cancel") {
@@ -81,7 +94,11 @@ struct PhotoPicker: View {
             
             if allPhotos.count > 0 {
                 for i in 0..<allPhotos.count {
-                    photoList.append(allPhotos[i])
+                    self.allPhotos = []
+                    imageManager.requestImage(for: allPhotos[i], targetSize: .init(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: { uiImage, info  in
+                        self.allPhotos.append(uiImage!)
+                        print(info!)
+                    })
                 }
             }
             if smartAlbums.count > 0 {
