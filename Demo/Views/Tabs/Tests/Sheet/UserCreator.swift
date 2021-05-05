@@ -45,7 +45,8 @@ struct UserCreator: View {
                         .padding(.all, 12)
                         .background(Color(UIColor(red: 0.84, green: 0.85, blue: 0.87, alpha: 0.6)))
                         .sheet(isPresented: $pickerShown, onDismiss: headIcon, content: {
-                            SPHPickerViewController(results: $pickerResults, configuration: pHPickerConfiguration())
+                            // SPHPickerViewController(results: $pickerResults, configuration: pHPickerConfiguration())
+                            PhotoPicker()
                         })
                     }
                 }

@@ -12,6 +12,8 @@ struct FirstView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var selection: Tabs = .first
     
+    @State private var pickerShow: Bool = false
+    
     enum Tabs {
         case first
         case second
@@ -41,7 +43,7 @@ struct FirstView: View {
                     .scaledToFill()
                     .frame(height: 200)
                     .clipped()
-            
+                
             case .third:
                 Image("third")
                     .resizable()
@@ -55,6 +57,11 @@ struct FirstView: View {
                     .frame(height: 200)
                     .clipped()
             }
+            Spacer()
+            Button("Photo Picker", action: { pickerShow.toggle() })
+                .sheet(isPresented: $pickerShow, content: {
+                    PhotoPicker()
+                })
             Spacer()
             Rectangle()
                 .frame(height: 0.5, alignment: .center)

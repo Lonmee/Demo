@@ -28,6 +28,9 @@ struct ImagePickerController: UIViewControllerRepresentable  {
             picker.cameraDevice = .front
         } else {
             picker.allowsEditing = true
+//            NotificationCenter.default.addObserver(forName: nil, object: nil, queue: OperationQueue.main) { note in
+//                print(note)
+//            }
         }
         
         return picker
