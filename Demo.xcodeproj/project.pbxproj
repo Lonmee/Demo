@@ -16,6 +16,7 @@
 		B03444CF263BE5D1008CD4DB /* Plurals.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B03444D1263BE5D1008CD4DB /* Plurals.stringsdict */; };
 		B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7CFC261328A2007EB7FD /* CoreDataView.swift */; };
 		B03B7D122613656B007EB7FD /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B7D112613656B007EB7FD /* UserDetails.swift */; };
+		B04D0405264399E80005D141 /* ImagePreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04D0404264399E80005D141 /* ImagePreviewer.swift */; };
 		B066BE33261ACBCB00EB68D1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE32261ACBCB00EB68D1 /* ModelData.swift */; };
 		B066BE3A261ACDF500EB68D1 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = B066BE39261ACDF500EB68D1 /* landmarkData.json */; };
 		B066BE47261AD6FC00EB68D1 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066BE46261AD6FC00EB68D1 /* SearchBar.swift */; };
@@ -89,6 +90,7 @@
 		B03444D2263BE5D4008CD4DB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Plurals.stringsdict"; sourceTree = "<group>"; };
 		B03B7CFC261328A2007EB7FD /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		B03B7D112613656B007EB7FD /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		B04D0404264399E80005D141 /* ImagePreviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewer.swift; sourceTree = "<group>"; };
 		B066BE32261ACBCB00EB68D1 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		B066BE39261ACDF500EB68D1 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		B066BE46261AD6FC00EB68D1 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				B0D7121C262AD86500AA362C /* ImagePickerController.swift */,
 				B01644BA26368B4000F73F69 /* TabLabel.swift */,
 				B06FE8502641393E002806E7 /* PhotoPicker.swift */,
+				B04D0404264399E80005D141 /* ImagePreviewer.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				B03B7CFD261328A2007EB7FD /* CoreDataView.swift in Sources */,
 				B0B2670E261238890058316D /* DemoApp.swift in Sources */,
 				B01644CF2636EA0500F73F69 /* FourthView.swift in Sources */,
+				B04D0405264399E80005D141 /* ImagePreviewer.swift in Sources */,
 				B0B267E92612DF050058316D /* Modifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

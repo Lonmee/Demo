@@ -21,38 +21,32 @@ struct PhotoPicker: View {
     
     var body: some View {
         // let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 40, alignment: .center), count: 2)
-        let rows: [GridItem] = Array(repeating: .init(.flexible(minimum: 130), spacing: 2, alignment: .center), count: 3)
+        let grideWidth = (UIScreen.main.bounds.width - 2) / 3
+        let rows: [GridItem] = Array(repeating: .init(.fixed(grideWidth), spacing: 1, alignment: .center), count: 3)
         NavigationView {
             ScrollView(.vertical) {
-                LazyVGrid(columns: rows, spacing: 2) {
-                    ForEach(0...4, id: \.self) { i in
-                        Image("IMG_F75DAC7E7AA3-1")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 120, height: 120, alignment: .center)
-                            .clipped()
+                LazyVGrid(columns: rows, spacing: 1) {
+                    ForEach(0...40, id: \.self) { i in
+                        NavigationLink(destination: ImagePreviewer(Image("IMG_F75DAC7E7AA3-1"))
+                                        .background(Color.black)) {
+                            Image("IMG_F75DAC7E7AA3-1")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: grideWidth, height: grideWidth, alignment: .center)
+                                .clipped()
+                        }
                     }
-                    
-                    //                    ForEach(allPhotos, id: \.self) { uiIma in
-                    //                        Image(uiImage: uiIma)
-                    //                            .resizable()
-                    //                            .scaledToFill()
-                    //                            .frame(width: 120, height: 120, alignment: .center)
-                    //                            .clipped()
-                    //                    }
+//                    ForEach(allPhotos, id: \.self) { uiImg in
+//                        NavigationLink(destination: ImagePreviewer(Image(uiImage: uiImg))
+//                                        .background(Color.black)) {
+//                            Image(uiImage: uiImg)
+//                                .resizable()
+//                                .scaledToFill()
+//                                .frame(width: grideWidth, height: grideWidth, alignment: .center)
+//                                .clipped()
+//                        }
+//                    }
                 }
-                
-                //                ScrollView {
-                //                     LazyVGrid(columns: columns) {
-                //                         ForEach((0...79), id: \.self) {
-                //                             let codepoint = $0 + 0x1f600
-                //                             let codepointString = String(format: "%02X", codepoint)
-                //                             Text("\(codepointString)")
-                //                             let emoji = String(Character(UnicodeScalar(codepoint)!))
-                //                             Text("\(emoji)")
-                //                         }
-                //                     }.font(.largeTitle)
-                //                 }
                 
                 
                 // List {
@@ -70,7 +64,7 @@ struct PhotoPicker: View {
                 //     }
                 // }
             }
-            .padding(.top, -50)
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 HStack {
                     Button("Cancel") {
