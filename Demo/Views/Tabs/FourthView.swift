@@ -8,13 +8,69 @@
 import SwiftUI
 
 struct FourthView: View {
+    @State private var offset = CGFloat.zero
+    
+    @State private var fruits = [
+        "Apple",
+        "Banana",
+        "Papaya",
+        "Mango"
+    ]
+
     var body: some View {
-        Image("10dzrq9")
-            .resizable()
-            .scaledToFill()
-            .frame(height: 200)
-            .clipped()
-        Spacer()
+        NavigationView{
+            List {
+                ForEach(
+                    fruits,
+                    id: \.self
+                ) { fruit in
+                    Text(fruit)
+                }
+                .onDelete { self.deleteFruit(at :$0) }
+                .onMove { self.moveFruit(from: $0, to: $1) }
+            }
+            .navigationTitle("Fruits")
+            .toolbar { EditButton() }
+        }
+    }
+    
+    func deleteFruit(at: IndexSet) -> Void {
+    
+    }
+    
+    func moveFruit(from: IndexSet, to: Int) -> Void {
+        print("from: \(from.startIndex), to: \(to)")
+    }
+    
+    //var body: some View {
+    //    Image("10dzrq9")
+    //        .resizable()
+    //        .scaledToFill()
+    //        .frame(height: 200)
+    //        .clipped()
+    //    ScrollView {
+    //        VStack {
+    //            ForEach(0..<100) { i in
+    //                Text("Item \(i)").padding()
+    //            }
+    //        }
+    //        .background(GeometryReader {
+    //            Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
+    //        })
+    //        .onPreferenceChange(ViewOffsetKey.self) { value in
+    //            print("offset: \(value)")
+    //            debugPrint("offset: \(value)")
+    //        }
+    //    }
+    //    .coordinateSpace(name: "scroll")
+    //}
+}
+
+struct ViewOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    static var defaultValue = CGFloat.zero
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
     }
 }
 
