@@ -14,56 +14,63 @@ struct FourthView: View {
         "Apple",
         "Banana",
         "Papaya",
-        "Mango"
+        "Mango",
+        "Apple",
+        "Banana",
+        "Papaya",
+        "Mango",
+        "Apple",
+        "Banana",
+        "Papaya",
+        "Mango",
+        "Apple",
+        "Banana",
+        "Papaya",
+        "Mango",
+        "Apple",
+        "Banana",
+        "Papaya",
+        "Mango",
+        "Apple",
+        "Banana",
+        "Papaya",
+        "Mango",
     ]
-
+    
     var body: some View {
-        NavigationView{
-            List {
-                ForEach(
-                    fruits,
-                    id: \.self
-                ) { fruit in
-                    Text(fruit)
-                }
-                .onDelete { self.deleteFruit(at :$0) }
-                .onMove { self.moveFruit(from: $0, to: $1) }
+//        Image("10dzrq9")
+//            .resizable()
+//            .scaledToFill()
+//            .frame(height: 200)
+//            .clipped()
+        List {
+            ForEach(
+                fruits,
+                id: \.self
+            ) { fruit in
+                Text(fruit)
             }
-            .navigationTitle("Fruits")
-            .toolbar { EditButton() }
+            .onDelete { self.deleteFruit(at :$0) }
+            .onMove { self.moveFruit(from: $0, to: $1) }
+            .background(GeometryReader { proxy in
+                Color.clear.preference(key: ViewOffsetKey.self, value: proxy.frame(in: .named("list")).origin.y)
+            })
+            .onPreferenceChange(ViewOffsetKey.self) { value in
+                debugPrint("offset: \(value)")
+            }
         }
+//        .coordinateSpace(name: "list")
+        .navigationTitle("Fruits")
+        .toolbar { EditButton() }
     }
     
     func deleteFruit(at: IndexSet) -> Void {
-    
+        
     }
     
     func moveFruit(from: IndexSet, to: Int) -> Void {
         print("from: \(from.startIndex), to: \(to)")
     }
-    
-    //var body: some View {
-    //    Image("10dzrq9")
-    //        .resizable()
-    //        .scaledToFill()
-    //        .frame(height: 200)
-    //        .clipped()
-    //    ScrollView {
-    //        VStack {
-    //            ForEach(0..<100) { i in
-    //                Text("Item \(i)").padding()
-    //            }
-    //        }
-    //        .background(GeometryReader {
-    //            Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
-    //        })
-    //        .onPreferenceChange(ViewOffsetKey.self) { value in
-    //            print("offset: \(value)")
-    //            debugPrint("offset: \(value)")
-    //        }
-    //    }
-    //    .coordinateSpace(name: "scroll")
-    //}
 }
 
 struct ViewOffsetKey: PreferenceKey {
